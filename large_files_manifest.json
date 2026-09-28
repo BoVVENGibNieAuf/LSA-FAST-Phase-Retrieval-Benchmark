@@ -1,0 +1,39 @@
+{
+  "status": "prepared_for_release",
+  "files": [
+    {
+      "path": "data/raw/data.mat",
+      "bytes": 148903690,
+      "sha256": "5c532cef5747c3c892bf575ba38a2e75689078b02bb844eb05af8b5bcdae29d3"
+    },
+    {
+      "path": "runs/pilot/author_20260927_225947/calibration_checkpoint.mat",
+      "bytes": 75725318,
+      "sha256": "3fac1d629cc9d7659886e7d0106decb76b0e71df7fe4ad8f539d594f6914a2c7"
+    },
+    {
+      "path": "runs/pilot/author_20260927_225947/environment.mat",
+      "bytes": 1280,
+      "sha256": "877b1505e67ff253d453a010188602854758d24b15284942b83d08a1d4484f6e"
+    },
+    {
+      "path": "runs/pilot/author_20260927_225947/metrics.mat",
+      "bytes": 642,
+      "sha256": "17b4cea381f8553d4a32f2814088fe44fbc0f0309888890a7ee03bf6307c3acf"
+    },
+    {
+      "path": "runs/pilot/author_20260927_225947/reference.mat",
+      "bytes": 113850227,
+      "sha256": "f482e48abb31ddf9eb2f39b5f1678e1cf7e63f8b6bfde0634c9df778114505f6"
+    },
+    {
+      "path": "runs/pilot/author_20260927_225947/sample.mat",
+      "bytes": 299524312,
+      "sha256": "aa300c05c6cf30423ae4c622a603151544fbe25bcb8fb03f88f406bcdddb00e6"
+    }
+  ],
+  "release_tag": "snapshot-2026-09-29",
+  "asset": "FAST-public-example-MAT-artifacts.zip",
+  "archive_bytes": 638007231,
+  "archive_sha256": "6f2d91e89f9abf689f3de265423797bc2d3f1f37d35be159ffb5163a395ca055"
+}

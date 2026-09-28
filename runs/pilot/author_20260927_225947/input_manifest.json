@@ -1,0 +1,131 @@
+{
+  "retrieved_utc": "2026-09-26T16:30:25.782106+00:00",
+  "code_commit": "27961c38b6e7f9d148b38a470e3b6b90accc4468",
+  "files": [
+    {
+      "path": "legacy_fast/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/Jiawei-sn/FAST/27961c38b6e7f9d148b38a470e3b6b90accc4468/LICENSE",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "path": "legacy_fast/README.md",
+      "source_url": "https://raw.githubusercontent.com/Jiawei-sn/FAST/27961c38b6e7f9d148b38a470e3b6b90accc4468/README.md",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 2714,
+      "sha256": "769bcfd087b7b2d872066b91d92016dfd4cb4746eb8e77cb5902f00583aa3a60"
+    },
+    {
+      "path": "legacy_fast/main.m",
+      "source_url": "https://raw.githubusercontent.com/Jiawei-sn/FAST/27961c38b6e7f9d148b38a470e3b6b90accc4468/main.m",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 3039,
+      "sha256": "67263f395479e51acd685ea89461f62f442a48d23f814c947c637a665038a166"
+    },
+    {
+      "path": "legacy_fast/prop.m",
+      "source_url": "https://raw.githubusercontent.com/Jiawei-sn/FAST/27961c38b6e7f9d148b38a470e3b6b90accc4468/prop.m",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 796,
+      "sha256": "9a7a35fd656ed91ede6afdbdd64f98c052ccdeecd744c63eb34b4cce48f1780e"
+    },
+    {
+      "path": "legacy_fast/tiltPhase.m",
+      "source_url": "https://raw.githubusercontent.com/Jiawei-sn/FAST/27961c38b6e7f9d148b38a470e3b6b90accc4468/tiltPhase.m",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 593,
+      "sha256": "c95d70ee27b3d227e9602b793d34c97c7e175e9a586caf6e754f055660f3f6a0"
+    },
+    {
+      "path": "legacy_fast/QPE_fig.png",
+      "source_url": "https://raw.githubusercontent.com/Jiawei-sn/FAST/27961c38b6e7f9d148b38a470e3b6b90accc4468/QPE_fig.png",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 1124286,
+      "sha256": "e98bf89e4be2c09d5422d8487a261aba4b42ba70b916819b2916a671b086f55c"
+    },
+    {
+      "path": "data/raw/data.mat",
+      "source_url": "https://cloudstore.zih.tu-dresden.de/index.php/s/yQq4FsWN6bFaZRQ/download",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 148903690,
+      "sha256": "5c532cef5747c3c892bf575ba38a2e75689078b02bb844eb05af8b5bcdae29d3"
+    },
+    {
+      "path": "docs/papers/FAST_2022_supplement.docx",
+      "source_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41377-022-00898-2/MediaObjects/41377_2022_898_MOESM1_ESM.docx",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 4020477,
+      "sha256": "47957aa0bedaf5cfdffcb9fd2da4a1622bc52be5451e18e49281971dfb68f8a1"
+    },
+    {
+      "path": "docs/papers/FAST_2022.pdf",
+      "source_url": "https://www.nature.com/articles/s41377-022-00898-2.pdf",
+      "returncode": 0,
+      "status": "downloaded",
+      "bytes": 3109755,
+      "sha256": "2f4102c61c5fba5a96746c5968ad8777f9f332e9081159c690daf1ac13ecb9e3"
+    }
+  ],
+  "scope": "Author public sample dataset, not all paper experiments; no independent test truth supplied.",
+  "variables": [
+    {
+      "name": "amp_facet_ref",
+      "shape": [
+        1920,
+        2560
+      ],
+      "class": "double",
+      "interpretation": "amplitude as used by original code; upstream normalization unverified"
+    },
+    {
+      "name": "amp_far_ref_a",
+      "shape": [
+        1920,
+        2560
+      ],
+      "class": "double",
+      "interpretation": "amplitude as used by original code; upstream normalization unverified"
+    },
+    {
+      "name": "amp_far_ref_b",
+      "shape": [
+        1920,
+        2560
+      ],
+      "class": "double",
+      "interpretation": "amplitude as used by original code; upstream normalization unverified"
+    },
+    {
+      "name": "amp_far_sam",
+      "shape": [
+        1920,
+        2560
+      ],
+      "class": "double",
+      "interpretation": "amplitude as used by original code; upstream normalization unverified"
+    },
+    {
+      "name": "zs",
+      "shape": [
+        1,
+        2
+      ],
+      "class": "double",
+      "value": [
+        0.0788,
+        0.086
+      ],
+      "units": "metres as used by original code"
+    }
+  ],
+  "verification": "MAT v5 variable headers inspected; independent Linux/Windows data downloads match SHA-256; MATLAB not executed."
+}

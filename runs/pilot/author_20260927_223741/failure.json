@@ -1,0 +1,7 @@
+{
+  "stage": "preflight",
+  "identifier": "FAST:Dependencies",
+  "message": "Missing author dependencies.",
+  "elapsed_seconds": 1.4215953,
+  "report": "错误使用 assert\nMissing author dependencies.\n\n出错 run_fast_reproduction (第 18 行)\n    assert(isempty(environment.missing_functions),'FAST:Dependencies','Missing author dependencies.');\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+}

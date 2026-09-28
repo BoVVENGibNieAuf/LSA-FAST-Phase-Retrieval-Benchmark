@@ -1,0 +1,15 @@
+.env
+.env.*
+*.pem
+*.key
+*.mat
+*.log
+*.asv
+matlab_prefs/
+.DS_Store
+Thumbs.db
+!.gitignore
+!runs/pilot/author_*/matlab.log
+.publication/
+FAST-public-example-MAT-artifacts.zip
+SHA256SUMS

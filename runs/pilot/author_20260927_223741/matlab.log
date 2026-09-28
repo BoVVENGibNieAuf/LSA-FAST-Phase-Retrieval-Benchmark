@@ -1,0 +1,21 @@
+[running] preflight 0/0, 0.0 seconds
+       matlab_version: '24.2.0.3361896 (R2024b) Update 10'
+             computer: 'PCWIN64'
+            toolboxes: [1x2 struct]
+    missing_functions: {'imbinarize'  'imclose'  'strel'  'corr2'  'medfilt2'  'gpuDeviceCount'  'gpuArray'}
+            functions: [1x1 struct]
+       data_variables: [5x1 struct]
+                   zs: [0.0788 0.0860]
+           gpu_status: 'not probed'
+
+[警告: Missing dependencies: imbinarize, imclose, strel, corr2, medfilt2, gpuDeviceCount, gpuArray] 
+[> 位置：check_environment (第 40 行)
+位置: run_fast_reproduction (第 17 行)] 
+Preflight only; no reconstruction or numerical tests executed.
+[failed] preflight 0/0, 3.0 seconds
+错误使用 assert
+Missing author dependencies.
+
+出错 run_fast_reproduction (第 18 行)
+    assert(isempty(environment.missing_functions),'FAST:Dependencies','Missing author dependencies.');
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

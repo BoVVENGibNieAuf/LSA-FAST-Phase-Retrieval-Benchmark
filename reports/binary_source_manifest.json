@@ -1,0 +1,112 @@
+[
+  {
+    "path": "data/raw/data.mat",
+    "bytes": 148903690,
+    "sha256": "5c532cef5747c3c892bf575ba38a2e75689078b02bb844eb05af8b5bcdae29d3"
+  },
+  {
+    "path": "docs/papers/FAST_2022.pdf",
+    "bytes": 3109755,
+    "sha256": "2f4102c61c5fba5a96746c5968ad8777f9f332e9081159c690daf1ac13ecb9e3"
+  },
+  {
+    "path": "docs/papers/FAST_2022_supplement.docx",
+    "bytes": 4020477,
+    "sha256": "47957aa0bedaf5cfdffcb9fd2da4a1622bc52be5451e18e49281971dfb68f8a1"
+  },
+  {
+    "path": "docs/project/FAST_Phase_Retrieval_Benchmark_学生课题说明_v1.0.docx",
+    "bytes": 57306,
+    "sha256": "1f29ab7ca0d0d7a0f92deebce39ed8b164827746f66c4ec724f9f00a1af9d9d3"
+  },
+  {
+    "path": "legacy_fast/QPE_fig.png",
+    "bytes": 1124286,
+    "sha256": "e98bf89e4be2c09d5422d8487a261aba4b42ba70b916819b2916a671b086f55c"
+  },
+  {
+    "path": "runs/pilot/author_20260927_223741/matlab.log",
+    "bytes": 1013,
+    "sha256": "4a535e74b601f9d97b2c72f1b85d4e6d66fa2ef27f59a2348213db3c791f50fb"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/01_reference_facet_amplitude.png",
+    "bytes": 362911,
+    "sha256": "5da6ad0cb1d156e691494111f112d86473c2e150663af857f267bc2826907bc2"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/02_support_mask.png",
+    "bytes": 14460,
+    "sha256": "93774def6dedaacd51809c77ea1d669b5c4bd1483fd7ac6b6e5d85319a69515d"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/03_sample_detector_amplitude.png",
+    "bytes": 367655,
+    "sha256": "800871a523aa5d814fdca365b45cb740be497df7ab23277265d8a9ac6ab33aef"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/04_reference_recovered_amplitude.png",
+    "bytes": 398604,
+    "sha256": "f58f5fb33228ab9c98e737a4591ab3e18a7101b6ff315a508925a10e301d80f9"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/05_reference_phase.png",
+    "bytes": 810110,
+    "sha256": "56c32d7f7624825870ac2a160345e6b59c75a74da7a34326460992a0cfc4ab22"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/06_sample_output_amplitude40.png",
+    "bytes": 390873,
+    "sha256": "07e7118ad11e82bc36fecd9608e58fa6a68eef126ef4cdd6dab304027264c042"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/07_corrected_phase40_raw.png",
+    "bytes": 811905,
+    "sha256": "123c8763eb60b3e15108f6159b1729519403d607925801affec5606407b5f459"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/08_author_display39.png",
+    "bytes": 182132,
+    "sha256": "d9b622c6028732f768e90c8cdb03c89e0d1dceb7a84f3535f50811aa435f9a67"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/09_final_iteration40_display.png",
+    "bytes": 181059,
+    "sha256": "a78e91a5e37fa9ace520615f7b0a4c4b8d8c448949203c227aa7ffc723c5e578"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/10_calibration_convergence.png",
+    "bytes": 27017,
+    "sha256": "a24daf1f866d1450797debde582d796be3db0b7db5122b371e9a4ac771345d79"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/calibration_checkpoint.mat",
+    "bytes": 75725318,
+    "sha256": "3fac1d629cc9d7659886e7d0106decb76b0e71df7fe4ad8f539d594f6914a2c7"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/environment.mat",
+    "bytes": 1280,
+    "sha256": "877b1505e67ff253d453a010188602854758d24b15284942b83d08a1d4484f6e"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/matlab.log",
+    "bytes": 8007,
+    "sha256": "9ca90300efed127245d4999eb93b0b017c4183cae9e0d78c5c33149c3a75763d"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/metrics.mat",
+    "bytes": 642,
+    "sha256": "17b4cea381f8553d4a32f2814088fe44fbc0f0309888890a7ee03bf6307c3acf"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/reference.mat",
+    "bytes": 113850227,
+    "sha256": "f482e48abb31ddf9eb2f39b5f1678e1cf7e63f8b6bfde0634c9df778114505f6"
+  },
+  {
+    "path": "runs/pilot/author_20260927_225947/sample.mat",
+    "bytes": 299524312,
+    "sha256": "aa300c05c6cf30423ae4c622a603151544fbe25bcb8fb03f88f406bcdddb00e6"
+  }
+]
