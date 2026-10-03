@@ -67,5 +67,13 @@ subplot(2,2,1); imagesc(x*1e6,x*1e6,abs(ref)); axis image; colorbar; title('Refe
 subplot(2,2,2); imagesc(x*1e6,x*1e6,phase,[-pi pi]); axis image; colorbar; title('Per-core reference phase (rad)');
 subplot(2,2,3); imagesc(x*1e6,x*1e6,refIntensity); axis image; colorbar; title('Pixel-integrated detector intensity');
 subplot(2,2,4); scatter(g.xy(:,1)*1e6,g.xy(:,2)*1e6,25,g.phase,'filled'); axis image; colorbar; title(sprintf('%d illuminated cores',g.core_count));
+if isfield(cfg,'facet_radius')
+ theta=linspace(0,2*pi,500);
+ for j=[1 2 4]
+  subplot(2,2,j); hold on;
+  plot(cfg.facet_radius*cos(theta)*1e6,cfg.facet_radius*sin(theta)*1e6,'w-','LineWidth',1.2);
+  plot(cfg.support_radius*cos(theta)*1e6,cfg.support_radius*sin(theta)*1e6,'r--');
+ end
+end
 set(f,'Position',[50 50 1000 850]); exportgraphics(f,fullfile(out,'MCF_model.png'),'Resolution',150);
 end

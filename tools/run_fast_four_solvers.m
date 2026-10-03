@@ -1,4 +1,4 @@
-function run_id=run_fast_four_solvers(resume_id)
+function run_id=run_fast_four_solvers(resume_id,custom_cfg)
 % Four-solver architecture pilot reuses frozen MCF inputs without regeneration.
 % Optional failed-run ID reuses completed method outputs after hash validation.
 root=fileparts(fileparts(mfilename('fullpath'))); oldpath=path;
@@ -20,7 +20,8 @@ if resuming
   if isfile(fullfile(out,name{1})), copyfile(fullfile(out,name{1}),fullfile(archive,name{1})); end
  end
 else
- cfg=fast_four_solver_config; cfg.run_id=['four_' char(datetime('now','Format','yyyyMMdd_HHmmss_SSS'))];
+ if nargin>=2, cfg=custom_cfg; else, cfg=fast_four_solver_config; end
+ cfg.run_id=['four_' char(datetime('now','Format','yyyyMMdd_HHmmss_SSS'))];
  out=fullfile(pilot,cfg.run_id); assert(~isfolder(out)); mkdir(out);
  writejson(fullfile(out,'config.json'),cfg);
 end
@@ -82,7 +83,10 @@ try
    end
    manifest=append(manifest,entry); writejson(fullfile(out,'data_manifest.json'),manifest);
    d=load(inputPath,'amplitude','mask','calibration');
-   outputs=struct; receipts=struct([]);
+   outputs=struct('ZERO',d.mask.*d.calibration); receipts=struct([]);
+   zero=struct('physical_output',outputs.ZERO,'budget',0,'solver_propagations',0, ...
+    'state_propagations',0,'iteration',0,'solver_seconds',0,'line_trials',0,'rejected_trials',0);
+   rows=append(rows,score(zero,d,H,truthPath,name,base.layout,condition,'ZERO','zero_iteration'));
    for m=1:numel(cfg.methods)
     method=cfg.methods{m}; resultPath=fullfile(caseDir,[method '_result.mat']);
     receiptPath=fullfile(caseDir,[method '_receipt.json']);
@@ -168,7 +172,7 @@ row=struct('case',name,'layout',layout,'condition',condition,'method',method,'bu
  'stop_reason',stop,'line_trials',s.line_trials,'rejected_trials',s.rejected_trials);
 end
 function plot_case(out,outputs,d,truthPath,base,cfg,name,rows)
-t=load(truthPath,'truth','roi'); labels=[{'TRUTH'} reshape(cfg.methods,1,[])];
+t=load(truthPath,'truth','roi'); labels=[{'TRUTH','ZERO'} reshape(cfg.methods,1,[])];
 f=figure('Visible','off'); guard=onCleanup(@()close(f)); %#ok<NASGU>
 x=((0:base.n-1)-(base.n-1)/2)*base.dx*1e6;
 ampmax=max(abs(t.truth(:))); phaselim=pi;
@@ -183,8 +187,8 @@ for j=1:numel(labels)
  end
  [~,~,theta]=fast_field_error(u,t.truth,t.roi);
  phase=angle(u.*conj(d.calibration)*exp(-1i*theta)); phase(~t.roi)=NaN;
- subplot(2,5,j); imagesc(x,x,abs(u),[0 ampmax]); axis image; colorbar; title([label ' amplitude']);
- subplot(2,5,j+5); imagesc(x,x,phase,[-phaselim phaselim]); axis image; colorbar; title([label ' phase (rad)']);
+ subplot(2,numel(labels),j); imagesc(x,x,abs(u),[0 ampmax]); axis image; colorbar; title([label ' amplitude']);
+ subplot(2,numel(labels),j+numel(labels)); imagesc(x,x,phase,[-phaselim phaselim]); axis image; colorbar; title([label ' phase (rad)']);
 end
 sgtitle([name ' / 200-call budget; coordinates um']);
 set(f,'Position',[30 30 1650 700]); exportgraphics(f,fullfile(out,'fields_200.png'),'Resolution',140);
@@ -213,7 +217,7 @@ fprintf(f,'## 本次工作\n\n按课题说明接入 HIO、ER、RAAR 和幅值损
 fprintf(f,'按累计 80、200 次传播调用保存输出，线搜索及拒绝试探的开销全部计入。CPU double；HIO beta=0.2，RAAR beta=0.9；L-BFGS 记忆长度 10，Armijo 线搜索，幅值平滑 epsilon=1e-8（检测振幅 RMS 归一化单位）。参数为首轮固定配置。\n\n');
 fprintf(f,'## 200 次传播预算结果\n\n|纤芯|测量|方法|实际调用|接受步数|振幅残差|复场 NRMSE|相位 RMSE / rad|求解秒|停止原因|\n|---|---|---|---:|---:|---:|---:|---:|---:|---|\n');
 for j=1:numel(rows)
- r=rows(j); if r.budget~=200, continue; end
+ r=rows(j); if r.budget~=200 && ~strcmp(r.method,'ZERO'), continue; end
  fprintf(f,'|%s|%s|%s|%d|%d|%.4f|%.4f|%.4f|%.3f|%s|\n',r.layout,r.condition,r.method, ...
   r.solver_propagations,r.iterations,r.amplitude_nrmse,r.field_nrmse,r.phase_rmse_rad,r.solver_seconds,r.stop_reason);
 end

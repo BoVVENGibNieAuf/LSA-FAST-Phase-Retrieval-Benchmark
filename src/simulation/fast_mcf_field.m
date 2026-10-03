@@ -10,6 +10,7 @@ for j=1:g.core_count
  ix=find(abs(x-g.xy(j,1))<=rmax); iy=find(abs(x-g.xy(j,2))<=rmax);
  [xx,yy]=meshgrid(x(ix),x(iy)); r2=(xx-g.xy(j,1)).^2+(yy-g.xy(j,2)).^2;
  psi=sqrt(2/pi)/w*exp(-r2/w^2).*(r2<=rmax^2);
+ if isfield(cfg,'facet_radius'), psi=psi.*(hypot(xx,yy)<=cfg.facet_radius); end
  if calculate
   xn=xx/cfg.patch_radius; yn=yy/cfg.patch_radius; a=ones(size(xx));
   switch scene

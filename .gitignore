@@ -13,3 +13,10 @@ Thumbs.db
 .publication/
 FAST-public-example-MAT-artifacts.zip
 SHA256SUMS
+.restore-download/
+*.zip.part*
+
+__pycache__/
+*.pyc
+*.before_circular
+circular_transfer_*.txt
