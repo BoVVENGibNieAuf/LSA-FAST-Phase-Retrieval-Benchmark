@@ -25,3 +25,7 @@ Windows：下载解压后双击 **START_CIRCULAR_BENCHMARK.cmd**。MATLAB 直接
 ## 私有备份与恢复
 
 代码、报告、结果图和工程资料保存在本仓库；全部六个 MAT 文件放在同仓库的 [snapshot-2026-09-29 Release](https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/releases/tag/snapshot-2026-09-29)。仅 clone 不含大文件，恢复步骤见 [RESTORE.md](RESTORE.md)，哈希见 `large_files_manifest.json`。
+
+## 给佳伟老师的阅读版（2026-10-03）
+
+[6页 PDF](reports/FAST_圆形MCF_佳伟老师交付版_20261003.pdf) · [可批注 Word](reports/FAST_圆形MCF_佳伟老师交付版_20261003.docx) · [完整方法卡](docs/methods/FAST_四类求解器方法卡.docx)。新版精简阅读路径，原结果汇报和原始数据保留。
