@@ -54,7 +54,9 @@ try
    'generation_reused',true,'previous_elapsed_seconds',status.elapsed_seconds, ...
    'wall_budget_scope','600 seconds per invocation; previous attempt archived'));
  else
-  if isfield(cfg,'layout')
+  if isfield(cfg,'noise_scan')
+   audit=fast_mcf_noise_generate(out,truthdir,cfg);
+  elseif isfield(cfg,'layout')
    assert(strcmp(sha256(cfg.layout_bank),cfg.layout_bank_sha256),'FAST:GeometryHash','Geometry bank changed');
    audit=fast_mcf_layout_generate(out,truthdir,cfg);
   else
@@ -154,7 +156,7 @@ if isfield(cfg,'layout')
 end
 fprintf(f,'## Model\n\n%d illuminated cores; nominal hex pitch 3.2 um (layout geometry recorded separately); assumed mode radius 0.9 um with 10%% variation. Per-core phase and gain fixed across reference/sample. Scalar diagonal transmission, sample at input facet.\n\n',audit.core_count);
 fprintf(f,'Reconstruction: 256x256, 0.5 um object-space samples. Generation: 512x512, 0.25 um samples, 2x2 intensity integration. Wavelength 532 nm, detector z=120 um. Standard angular-spectrum operator in an explicitly separate benchmark.\n\n');
-fprintf(f,'Known synthetic reference calibration common to both solvers. Two reference intensity planes are saved for a future estimated-calibration test. Conditions: clean and Poisson shot noise + 1-electron read noise, exposure defined in config.json (v1 peak-based; layout batch total-reference-photon-based).\n\n');
+fprintf(f,'Known synthetic reference calibration common to both solvers. Two reference intensity planes are saved for a future estimated-calibration test. Camera conditions in config.json; Poisson shot noise and read-noise sigma %.6g electrons, exposure defined in config.json.\n\n',cfg.read_noise_electrons);
 fprintf(f,'## Sampling audit\n\n2x versus 4x reference-amplitude NRMSE: %.6g. Maximum detector edge-energy fraction: %.6g.\n\n',audit.oversample_2_vs_4_amplitude_nrmse,max(audit.detector_edge_energy_fraction));
 fprintf(f,'## Results at fixed final iteration\n\n|Scene|Condition|Method|Iteration|Amplitude NRMSE|Full-field NRMSE|Core phase RMSE rad|Solver s|\n|---|---|---|---:|---:|---:|---:|---:|\n');
 for j=1:numel(records)
