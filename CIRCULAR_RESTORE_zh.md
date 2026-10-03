@@ -2,7 +2,7 @@
 
 本档案对应 circular_20261003_224006_279 / four_20261003_224047_034，共184个文件，包括原始MAT输入、评分真值、全部检查点、指标和图像。
 
-下载私有Release：https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/releases/tag/circular-results-2026-10-03
+下载公开 Release（无需访问授权）：https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/releases/tag/circular-results-2026-10-03
 
 附件：circular-results-20261003.zip；SHA-256：`99637764c0fdc7c986fd15f10317c84da486a3f6fc91ccb862e21b2bdf3ad7c9`。
 

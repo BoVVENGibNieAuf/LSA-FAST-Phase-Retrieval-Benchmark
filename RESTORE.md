@@ -1,8 +1,12 @@
 # Restore the MAT inputs and results
 
-The private Release is part of this snapshot; a Git clone alone contains code, reports and figures, not the large MAT files.
+## Availability — checked 2026-10-04
 
-From the repository root, using GitHub CLI authenticated to an account with access:
+The repository is public, but the historical `snapshot-2026-09-29` Release remains a **draft**. Its six MAT files are not available to ordinary public visitors. Changing repository visibility does not publish a draft Release. A Git clone contains code, reports and figures, not these large MAT files.
+
+The current circular MCF archive is publicly available from [circular-results-2026-10-03](https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/releases/tag/circular-results-2026-10-03); use [CIRCULAR_RESTORE_zh.md](CIRCULAR_RESTORE_zh.md) for that archive.
+
+The commands below describe the historical snapshot. They require an account permitted to access the draft until the repository owner publishes it; they are not anonymous public-download instructions.
 
 ```bash
 gh release download snapshot-2026-09-29 --repo BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark --pattern 'FAST-public-example-MAT-artifacts.zip' --pattern 'SHA256SUMS'

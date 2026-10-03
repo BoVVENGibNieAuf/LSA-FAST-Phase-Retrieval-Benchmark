@@ -1,4 +1,8 @@
-# Private publication snapshot — 2026-09-29
+# Publication snapshot — 2026-09-29
+
+## Current visibility — 2026-10-04
+
+The repository owner changed this repository from private to public. Current source, reports and the published circular-results-2026-10-03 Release are publicly accessible without collaborator access. The historical snapshot-2026-09-29 Release remains a draft and is not publicly downloadable. The snapshot date below describes historical contents, not current visibility. Existing licenses and numerical validation claims are unchanged.
 
 ## Scope
 
@@ -8,7 +12,7 @@ The completed run `author_20260927_225947` used 2500 calibration iterations and 
 
 ## Large files
 
-The six original MAT files (public input, calibration checkpoint, environment, metrics, reference, sample) are archived separately in the private release `snapshot-2026-09-29`. See `large_files_manifest.json` and `RESTORE.md`. Git source archives alone do NOT include these files.
+The six original MAT files (public input, calibration checkpoint, environment, metrics, reference, sample) are archived separately in the draft release `snapshot-2026-09-29` (not publicly published as of 2026-10-04). See `large_files_manifest.json` and `RESTORE.md`. Git source archives alone do NOT include these files.
 
 ## Publication handling
 

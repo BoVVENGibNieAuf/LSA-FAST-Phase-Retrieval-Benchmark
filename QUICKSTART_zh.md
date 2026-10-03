@@ -13,7 +13,7 @@
 
 ## 三步运行
 
-1. 私有仓库需先获仓库拥有者授予访问权限；下载 ZIP 后解压，或 `git clone`。
+1. 仓库已公开，无需仓库拥有者授予访问权限；可直接下载 ZIP 后解压，或 `git clone`。
 2. Windows 双击 `START_CIRCULAR_BENCHMARK.cmd`。其他系统在 MATLAB 将当前目录切到工程根目录，执行：
    ```matlab
    setup_project

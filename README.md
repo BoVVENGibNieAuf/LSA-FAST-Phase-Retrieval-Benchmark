@@ -1,5 +1,7 @@
 # FAST 相位恢复基准研究
 
+**源码状态：公开（Public）。2026-10-04 已核验仓库及已发布 Release 可公开访问，无需仓库邀请或额外访问授权。** 仓库可见性不改变现有许可证、实验验证状态或复跑结论。
+
 ## 当前入口：圆形端面两类 MCF
 
 [导师快速复跑说明](QUICKSTART_zh.md) · [方法卡](docs/methods/METHOD_CARDS_zh.md) · [方法卡 Word](docs/methods/FAST_四类求解器方法卡.docx) · [交付清单](docs/methods/DELIVERY_CHECKLIST_zh.md)
@@ -22,10 +24,18 @@ Windows：下载解压后双击 **START_CIRCULAR_BENCHMARK.cmd**。MATLAB 直接
 
 作者原始 FAST 复现与新模拟比较是两条独立入口。原始复现见 RUNBOOK.md；新模拟请使用上面的快速开始。
 
-## 私有备份与恢复
+## 公开源码与结果恢复
 
-代码、报告、结果图和工程资料保存在本仓库；全部六个 MAT 文件放在同仓库的 [snapshot-2026-09-29 Release](https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/releases/tag/snapshot-2026-09-29)。仅 clone 不含大文件，恢复步骤见 [RESTORE.md](RESTORE.md)，哈希见 `large_files_manifest.json`。
+代码、报告、结果图和工程资料保存在本公开仓库。当前圆形 MCF 的完整结果可从 [circular-results-2026-10-03 Release](https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/releases/tag/circular-results-2026-10-03) 公开下载，恢复步骤见 [CIRCULAR_RESTORE_zh.md](CIRCULAR_RESTORE_zh.md)。
 
-## 给佳伟老师的阅读版（2026-10-03）
+历史作者复现所用的六个 MAT 文件位于 `snapshot-2026-09-29` Release；截至 2026-10-04，该 Release 仍为 **草稿（Draft）**，未公开发布，普通访客不能下载。仓库转为公开不会自动发布草稿。仅 clone 不含这些大文件，历史恢复说明见 [RESTORE.md](RESTORE.md)，哈希见 `large_files_manifest.json`。
+
+## 最新阅读版与 LaTeX 源码（2026-10-04）
+
+[12页 LaTeX 排版 PDF](reports/FAST_圆形MCF_LaTeX排版版_20261004.pdf) · [完整 LaTeX 工程 ZIP](reports/FAST_LaTeX工程_20261004.zip) · [LaTeX 源文件](reports/latex_delivery_20261004/main.tex)。工程含高清结果图、数据摘要与编译说明，已验证独立编译。
+
+早期 PDF/Word 和历史归档保留原交付版本；其中关于仓库访问权限的旧文字，以本页当前公开状态为准。
+
+## 历史阅读版（2026-10-03）
 
 [6页 PDF](reports/FAST_圆形MCF_佳伟老师交付版_20261003.pdf) · [可批注 Word](reports/FAST_圆形MCF_佳伟老师交付版_20261003.docx) · [完整方法卡](docs/methods/FAST_四类求解器方法卡.docx)。新版精简阅读路径，原结果汇报和原始数据保留。
