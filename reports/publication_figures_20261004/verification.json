@@ -1,0 +1,8 @@
+{
+  "pdf_pages": 11,
+  "figure_pages": 8,
+  "field_nrmse_recomputed_matches": 16,
+  "pdf_visual_review": "all pages contact sheet; noise and noisy amplitude at full page",
+  "word_validation": "package structure only; Word pagination not live-tested",
+  "data_changes": false
+}
