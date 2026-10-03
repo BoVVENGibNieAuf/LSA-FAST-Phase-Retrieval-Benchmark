@@ -65,7 +65,7 @@
 \end{itemize}
 四方法计算、评分及原始绘图共 32.62 秒，不含输入生成。此报告只重新排版和绘图，未重新运行求解器。
 \subsection*{材料索引}
-第~\pageref{sec:noise}~页给出噪声模型，第~\pageref{sec:metrics}~页给出实际噪声强度和误差定义；其后为分开展示的振幅与相位大图。
+第~\pageref{sec:noise}~页给出噪声模型，第~\pageref{sec:metrics}~页给出实际噪声强度和误差定义；其后给出精度随迭代次数和传播次数变化的对比图，以及振幅与相位大图。
 \href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark}{公开项目仓库（无需访问授权）}保存完整代码、运行指标和结果包。本工程的 \texttt{main.tex} 与 \texttt{figures/} 可独立编译为本报告。
 
 \clearpage\section*{噪声模型：从探测器强度到输入振幅}\label{sec:noise}
@@ -127,12 +127,17 @@ E_\phi&=\sqrt{\frac{1}{|\Omega|}\sum_{p\in\Omega}
 \label{eq:phaseplot}
 \end{equation}
 $\Omega$ 为支持域内参考振幅大于参考峰值 $15\%$ 的像素。白色为未显示区域，不代表零相位；相位图与相位误差含义不同。所有相位图共用 $[-\pi,\pi]$ 色标，所有振幅图共用同一色标，未逐图归一化。
-\figpage{周期 / 无噪声｜振幅比较}{periodic_clean_amplitude.pdf}{图2}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
-\figpage{周期 / 无噪声｜相位比较}{periodic_clean_phase.pdf}{图3}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
-\figpage{非周期 / 无噪声｜振幅比较}{aperiodic_clean_amplitude.pdf}{图4}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
-\figpage{非周期 / 无噪声｜相位比较}{aperiodic_clean_phase.pdf}{图5}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
-\figpage{周期 / 含噪声｜振幅比较}{periodic_shot_read_amplitude.pdf}{图6}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
-\figpage{周期 / 含噪声｜相位比较}{periodic_shot_read_phase.pdf}{图7}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
-\figpage{非周期 / 含噪声｜振幅比较}{aperiodic_shot_read_amplitude.pdf}{图8}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
-\figpage{非周期 / 含噪声｜相位比较}{aperiodic_shot_read_phase.pdf}{图9}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
+
+\figpage{精度随迭代次数变化｜复场误差}{convergence_field_nrmse_iterations.pdf}{图2}{复场 NRMSE 越低越好。圆点为实际保存的初值、80 次与 200 次传播检查点；连线仅辅助辨认，不表示逐步记录或插值估计。HIO、ER、RAAR 对应第 0、40、100 轮；L-BFGS 横坐标为各条件下实际接受的更新次数。四种条件分别展示，初值相同。}
+\figpage{等计算预算下的精度变化｜复场误差}{convergence_field_nrmse_propagations.pdf}{图3}{横轴为正向与伴随传播的累计调用次数，包含 L-BFGS 被拒绝的线搜索试探；用于等传播预算比较。各曲线仅包含 0、80、200 三个真实检查点，连线不代表中间轨迹。含噪声 ER 从 80 到 200 次传播的复场误差上升。}
+\figpage{精度随迭代次数变化｜相位误差}{convergence_phase_rmse_rad_iterations.pdf}{图4}{亮芯区域内全局相位对齐后的相位 RMSE，单位 rad，越低越好。点的位置采用实际接受的迭代次数；L-BFGS 每轮的传播开销可变。仅显示保存的三个检查点，不推断未记录区间的波动或最佳停止位置。}
+\figpage{等计算预算下的精度变化｜相位误差}{convergence_phase_rmse_rad_propagations.pdf}{图5}{与图4使用同一组相位误差，改以传播次数为横轴。全部数值来自原批次指标，并与报告终值一致；本次未获得逐迭代密集记录。图中比较限于原单样品、固定种子运行，无重复实验置信区间。}
+\figpage{周期 / 无噪声｜振幅比较}{periodic_clean_amplitude.pdf}{图6}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
+\figpage{周期 / 无噪声｜相位比较}{periodic_clean_phase.pdf}{图7}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
+\figpage{非周期 / 无噪声｜振幅比较}{aperiodic_clean_amplitude.pdf}{图8}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
+\figpage{非周期 / 无噪声｜相位比较}{aperiodic_clean_phase.pdf}{图9}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
+\figpage{周期 / 含噪声｜振幅比较}{periodic_shot_read_amplitude.pdf}{图10}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
+\figpage{周期 / 含噪声｜相位比较}{periodic_shot_read_phase.pdf}{图11}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
+\figpage{非周期 / 含噪声｜振幅比较}{aperiodic_shot_read_amplitude.pdf}{图12}{六面板为真值、共同初值、HIO、ER、RAAR、L-BFGS。四算法预算均为 200 次传播。显示范围 $\pm32\,\mu\mathrm{m}$，覆盖半径 $29\,\mu\mathrm{m}$ 的支持域；完整计算网格宽 $128\,\mu\mathrm{m}$。}
+\figpage{非周期 / 含噪声｜相位比较}{aperiodic_shot_read_phase.pdf}{图13}{参考校正相位见式~\eqref{eq:phaseplot}。仅显示保存的亮芯区域 $\Omega$；白色区域不代表零相位。色标统一为 $[-\pi,\pi]$，单位为 rad。算法顺序与振幅图一致。}
 \end{document}

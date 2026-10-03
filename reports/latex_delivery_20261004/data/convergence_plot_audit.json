@@ -1,0 +1,6 @@
+{
+  "rows": 48,
+  "original_metric_checks": 64,
+  "source": "Original MATLAB saved checkpoints: initialization, 80 and 200 propagation calls; connecting lines are visual guides, not dense histories",
+  "smoothing": false
+}

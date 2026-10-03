@@ -1,11 +1,23 @@
 {
   "compiler": "Tectonic 0.17.0 (XeTeX/LaTeX engine)",
-  "pages": 12,
+  "pages": 16,
   "formula_equations": 11,
   "compilation_warnings": 0,
   "summary_metric_checks": 20,
   "camera_statistic_checks": 6,
   "review": "All pages contact sheet; mathematical pages at full resolution.",
-  "fresh_extraction_compile": "passed with cached TeX resources; 12 pages and extracted text identical",
-  "visibility_revision": "2026-10-04: public repository wording; recompiled 12 pages without warnings; no scientific data changes"
+  "fresh_extraction_compile": "Previous 12-page edition verified; current 16-page compile passed; all four new graph pages visually reviewed.",
+  "visibility_revision": "2026-10-04: public repository wording; recompiled 12 pages without warnings; no scientific data changes",
+  "convergence_revision": {
+    "points": 48,
+    "original_metric_checks": 64,
+    "sampling": "0/80/200 propagation checkpoints only",
+    "dense_rerun": "remote MATLAB startup failed; no dense results used",
+    "figure_pages_reviewed": [
+      5,
+      6,
+      7,
+      8
+    ]
+  }
 }
