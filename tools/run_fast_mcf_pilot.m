@@ -1,4 +1,4 @@
-function run_fast_mcf_pilot(resume_id)
+function run_id=run_fast_mcf_pilot(resume_id,custom_cfg)
 % Literature-informed known-truth core-resolved pilot; frozen old runs retained.
 root=fileparts(fileparts(mfilename('fullpath')));
 oldpath=path; pathGuard=onCleanup(@()path(oldpath)); %#ok<NASGU>
@@ -21,10 +21,13 @@ if resuming
   source=fullfile(out,name{1}); if isfile(source), copyfile(source,fullfile(recovery,name{1})); end
  end
 else
- cfg=fast_mcf_config; cfg.run_id=['mcf_' char(datetime('now','Format','yyyyMMdd_HHmmss_SSS'))];
+ if nargin>=2, cfg=custom_cfg; else, cfg=fast_mcf_config; end
+ if ~isfield(cfg,'run_id'), cfg.run_id=['mcf_' char(datetime('now','Format','yyyyMMdd_HHmmss_SSS'))]; end
+ assert(~isfolder(fullfile(pilot,cfg.run_id)),'FAST:ExistingRun','Use resume for an existing run');
  out=fullfile(pilot,cfg.run_id); mkdir(out);
  truthdir=fullfile(root,'evaluation_only',cfg.run_id); mkdir(truthdir);
 end
+run_id=cfg.run_id;
 diary(fullfile(out,'matlab.log')); diaryGuard=onCleanup(@()diary('off')); %#ok<NASGU>
 tAll=tic;
 try
@@ -51,7 +54,13 @@ try
    'generation_reused',true,'previous_elapsed_seconds',status.elapsed_seconds, ...
    'wall_budget_scope','600 seconds per invocation; previous attempt archived'));
  else
-  audit=fast_mcf_generate(out,truthdir,cfg); writejson(fullfile(out,'generation_audit.json'),audit);
+  if isfield(cfg,'layout')
+   assert(strcmp(sha256(cfg.layout_bank),cfg.layout_bank_sha256),'FAST:GeometryHash','Geometry bank changed');
+   audit=fast_mcf_layout_generate(out,truthdir,cfg);
+  else
+   audit=fast_mcf_generate(out,truthdir,cfg);
+  end
+  writejson(fullfile(out,'generation_audit.json'),audit);
  end
  H=fast_mcf_transfer(cfg.n,cfg.dx,cfg.lambda,cfg.z);
  records=struct([]); manifest=struct([]); count=0;
@@ -140,9 +149,12 @@ end
 function report(out,cfg,audit,records,elapsed)
 f=fopen(fullfile(out,'REPORT.md'),'w','n','UTF-8'); assert(f>=0); guard=onCleanup(@()fclose(f)); %#ok<NASGU>
 fprintf(f,'# Core-resolved MCF pilot\n\nRun: %s\n\n',cfg.run_id);
-fprintf(f,'## Model\n\n%d illuminated synthetic cores; pitch 3.2 um; assumed mode radius 0.9 um with 10%% variation. Per-core phase and gain fixed across reference/sample. Scalar diagonal transmission, sample at input facet.\n\n',audit.core_count);
+if isfield(cfg,'layout')
+ fprintf(f,'Layout: %s; seed: %d; common reference power %.6g, reference photoelectrons %.6g.\n\n',cfg.layout,cfg.seed,cfg.reference_power,cfg.reference_photons);
+end
+fprintf(f,'## Model\n\n%d illuminated cores; nominal hex pitch 3.2 um (layout geometry recorded separately); assumed mode radius 0.9 um with 10%% variation. Per-core phase and gain fixed across reference/sample. Scalar diagonal transmission, sample at input facet.\n\n',audit.core_count);
 fprintf(f,'Reconstruction: 256x256, 0.5 um object-space samples. Generation: 512x512, 0.25 um samples, 2x2 intensity integration. Wavelength 532 nm, detector z=120 um. Standard angular-spectrum operator in an explicitly separate benchmark.\n\n');
-fprintf(f,'Known synthetic reference calibration common to both solvers. Two reference intensity planes are saved for a future estimated-calibration test. Conditions: clean and Poisson shot noise + 1-electron read noise, fixed exposure at reference peak 200 electrons.\n\n');
+fprintf(f,'Known synthetic reference calibration common to both solvers. Two reference intensity planes are saved for a future estimated-calibration test. Conditions: clean and Poisson shot noise + 1-electron read noise, exposure defined in config.json (v1 peak-based; layout batch total-reference-photon-based).\n\n');
 fprintf(f,'## Sampling audit\n\n2x versus 4x reference-amplitude NRMSE: %.6g. Maximum detector edge-energy fraction: %.6g.\n\n',audit.oversample_2_vs_4_amplitude_nrmse,max(audit.detector_edge_energy_fraction));
 fprintf(f,'## Results at fixed final iteration\n\n|Scene|Condition|Method|Iteration|Amplitude NRMSE|Full-field NRMSE|Core phase RMSE rad|Solver s|\n|---|---|---|---:|---:|---:|---:|---:|\n');
 for j=1:numel(records)
@@ -179,6 +191,9 @@ end
 
 function validate_resume(root,out,truthdir,cfg)
 % Ensure preserved numerical sources and recorded inputs still match the run.
+if isfield(cfg,'layout')
+ assert(strcmp(sha256(cfg.layout_bank),cfg.layout_bank_sha256),'FAST:GeometryHash','Geometry bank changed');
+end
 p=jsondecode(fileread(fullfile(out,'provenance.json')));
 repairable={'tools/run_fast_mcf_pilot.m','tests/test_fast_mcf.m'};
 for j=1:numel(p.sources)
