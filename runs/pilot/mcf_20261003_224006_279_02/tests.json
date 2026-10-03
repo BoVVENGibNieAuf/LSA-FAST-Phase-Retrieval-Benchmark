@@ -1,0 +1,18 @@
+{
+  "round_trip": 4.1046031518777691E-16,
+  "adjoint": 4.280950445895376E-17,
+  "plane_wave": 0,
+  "fourier_mode": 1.1917074575776983E-15,
+  "pixel_average": 0,
+  "intensity_integration": 0,
+  "geometry_repeat": true,
+  "fixed_coefficients": 0,
+  "coefficient_linearity": 0,
+  "blank_correction": 0,
+  "poisson_mean": 20.02252197265625,
+  "poisson_variance": 19.947304485874984,
+  "camera_repeat": true,
+  "checkpoint_resume_error": 0,
+  "checkpoint_schema": true,
+  "passed": true
+}

@@ -2,7 +2,7 @@
 
 ## 当前验证状态
 
-2026-10-03：新入口和圆形模型已编写；节点 MATLAB 未成功启动，新数值结果、几何图及全新下载复跑**待验证**。旧六角外轮廓结果只作历史架构验证，不代表本模型。
+2026-10-03：圆形数值运行已完成，16/16个四方法任务、零失败，几何与求解器测试通过。正式结果见 reports/FAST_圆形MCF_结果汇报_20261003.docx。全新下载副本数值复跑仍未验证。
 
 ## 所需环境
 
@@ -46,4 +46,4 @@
 
 [四类方法卡](docs/methods/METHOD_CARDS_zh.md) · [方法卡 Word](docs/methods/FAST_四类求解器方法卡.docx) · [交付状态](docs/methods/DELIVERY_CHECKLIST_zh.md)
 
-给导师的完整结果版 Word 需要本入口成功运行、核验真实图后生成；当前准备版不得当作完成结果汇报。
+正式结果版 Word：reports/FAST_圆形MCF_结果汇报_20261003.docx。完整结果归档与恢复见 CIRCULAR_RESTORE_zh.md。

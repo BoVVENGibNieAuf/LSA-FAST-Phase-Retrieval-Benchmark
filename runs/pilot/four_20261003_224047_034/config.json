@@ -1,0 +1,44 @@
+{
+  "version": "circular-four-solvers-v2",
+  "methods": [
+    "HIO",
+    "ER",
+    "RAAR",
+    "LBFGS"
+  ],
+  "budgets": [
+    80,
+    200
+  ],
+  "hio_beta": 0.2,
+  "raar_beta": 0.9,
+  "lbfgs_memory": 10,
+  "armijo": 0.0001,
+  "backtrack": 0.5,
+  "max_line_trials": 25,
+  "gradient_tolerance": 1E-10,
+  "amplitude_epsilon": 1E-8,
+  "max_solver_seconds": 120,
+  "max_wall_seconds": 900,
+  "backend": "MATLAB CPU double",
+  "source_runs": [
+    "mcf_20261003_224006_279_01",
+    "mcf_20261003_224006_279_02"
+  ],
+  "layouts": [
+    "periodic",
+    "aperiodic"
+  ],
+  "conditions": [
+    "clean",
+    "shot_read"
+  ],
+  "scene": "mixed",
+  "parameter_selection": "fixed engineering defaults, no test-truth tuning",
+  "budget_rule": "all solver forward/adjoint calls, including rejected line trials; scoring separate",
+  "initialization": "same saved synthetic reference times common support",
+  "output_rule": "common support projection of latest accepted internal state",
+  "units": "meters, radians, relative field amplitude, photoelectrons",
+  "scope": "synthetic periodic and aperiodic circular facets",
+  "run_id": "four_20261003_224047_034"
+}

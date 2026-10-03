@@ -1,0 +1,7 @@
+{
+  "method": "LBFGS",
+  "input_sha256": "d23fb8a03eeb46f3e8d995f21cedd903fa39ddefbba68805bed0a99171d0de1e",
+  "result_sha256": "02b0f508f7347654ae37f70f32ff99075017a3166c19c68e004a0da626242c83",
+  "stop_reason": "propagation_budget",
+  "solver_propagations": 200
+}

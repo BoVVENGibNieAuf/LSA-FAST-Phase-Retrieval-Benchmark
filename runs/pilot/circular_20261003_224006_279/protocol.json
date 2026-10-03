@@ -1,0 +1,17 @@
+{
+  "state": "frozen_before_solver_results",
+  "scope": "engineering pilot; one fixed paired transmission seed; no hyperparameter search",
+  "geometry_seed": 2.0261031E+7,
+  "transmission_seed": 2.0261003E+7,
+  "layouts": [
+    "periodic",
+    "aperiodic"
+  ],
+  "core_count": 163,
+  "facet_radius_m": 2.6E-5,
+  "support_radius_m": 2.9E-5,
+  "reference_photons": 200000,
+  "independent_measured_reference": false,
+  "test_split": "not a generalization study",
+  "failure_rule": "retain all failed runs; do not rank incomplete methods"
+}

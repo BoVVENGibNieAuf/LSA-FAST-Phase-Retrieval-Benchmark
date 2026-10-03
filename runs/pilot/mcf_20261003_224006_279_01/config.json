@@ -1,0 +1,68 @@
+{
+  "version": "circular-mcf-v1",
+  "n": 256,
+  "dx": 5E-7,
+  "oversample": 2,
+  "lambda": 5.32E-7,
+  "z": 0.00012,
+  "reference_z": [
+    0.0001,
+    0.00012
+  ],
+  "pitch": 3.2E-6,
+  "core_diameter_nominal": 2E-6,
+  "patch_radius": 2.2E-5,
+  "mode_radius": 9E-7,
+  "mode_width_variation": 0.1,
+  "jitter_fraction": 0.12,
+  "gain_range": [
+    0.75,
+    1
+  ],
+  "mode_truncation_radii": 3,
+  "support_radius": 2.9E-5,
+  "roi_fraction": 0.15,
+  "seed": 2.0261003E+7,
+  "noise_seed": 3.102026E+6,
+  "peak_photons": 200,
+  "read_noise_electrons": 1,
+  "beta": 0.2,
+  "iterations": 40,
+  "checkpoints": [
+    10,
+    20,
+    30,
+    40
+  ],
+  "max_wall_seconds": 600,
+  "scenes": [
+    "mixed"
+  ],
+  "conditions": [
+    "clean",
+    "shot_read"
+  ],
+  "methods": [
+    "HIO",
+    "ER"
+  ],
+  "backend": "CPU double",
+  "operator": "centered angular spectrum envelope, standard FFT DC",
+  "calibration": "known synthetic reference field, common to HIO and ER",
+  "geometry": "synthetic full circular facet; explicit cladding disk",
+  "camera": "subpixel intensity average, fixed exposure from blank reference",
+  "support": "common outer disk; individual core geometry not supplied to solver",
+  "initialization": "known synthetic reference complex field",
+  "truth_access": "evaluation_only files; scorer only, no OS-enforced isolation",
+  "parameter_selection": "fixed seed and final iteration; no truth-based selection",
+  "assumptions": "scalar single-mode cores; diagonal transmission; sample at input facet; one polarization; free-space detection; mode width and noise chosen for pilot",
+  "pending": "measured core map/mode radii; objective pupil and magnification; coupling, polarization drift, estimated reference calibration",
+  "units": "meters, radians, relative field amplitude, photoelectrons",
+  "facet_radius": 2.6E-5,
+  "reference_power": 1E-9,
+  "reference_photons": 200000,
+  "layout_bank": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\circular_20261003_224006_279\\layout_bank.mat",
+  "layout_bank_sha256": "abb6cd4444897434a7f19b1b4130302232715574821e7a58f1ae20b6b314af29",
+  "layout": "periodic",
+  "run_id": "mcf_20261003_224006_279_01"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "case": "mixed_clean",
+    "input_sha256": "d1293cd9ef42bd0a5e24a2b0af5b5047c7894e3b372df5e8611dd8b6950ff18e",
+    "truth_sha256": "7c4b588fc3d06030a6fde92a0adb72bed9a34579fe98fac3e4091305a78fcd1e"
+  },
+  {
+    "case": "mixed_shot_read",
+    "input_sha256": "895a11b8d07ead7519ef28920ba7c660ae5ba3d8e38bd61aefa2215458fe4c73",
+    "truth_sha256": "7c4b588fc3d06030a6fde92a0adb72bed9a34579fe98fac3e4091305a78fcd1e"
+  }
+]

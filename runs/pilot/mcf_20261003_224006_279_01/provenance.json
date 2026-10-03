@@ -1,0 +1,83 @@
+{
+  "matlab_version": "24.2.0.3361896 (R2024b) Update 10",
+  "computer": "PCWIN64",
+  "sources": [
+    {
+      "path": "tools/run_fast_mcf_pilot.m",
+      "sha256": "fc3193814c73252a27bfec1a4a274971037a935f07fd031cec20ca050822f130"
+    },
+    {
+      "path": "tests/test_fast_mcf.m",
+      "sha256": "1405b4730fed0a907e23c4ab222a69d0b40fd0cdffad7d64f9e09d522243329a"
+    },
+    {
+      "path": "src/solvers/fast_project_amplitude.m",
+      "sha256": "f06977947a2e4fc972983d5416301f3919189005902e7a20d39b723e569d8c8d"
+    },
+    {
+      "path": "src/solvers/fast_support_step.m",
+      "sha256": "26194f471f31166e774d751bdd2d9ce9a1b8926a6f0a5d57e8081f2865c202dd"
+    },
+    {
+      "path": "src/metrics/fast_field_error.m",
+      "sha256": "00f1e323ddd9cf042abc78dfb2badefa8713701e5e132ad9707e85d5a95ad289"
+    },
+    {
+      "path": "src/solvers/fast_mcf_solve_case.m",
+      "sha256": "1ca0d158f17f6588544c4f15ef4c659f71802f4642a6414d116dd430a2f54a93"
+    },
+    {
+      "path": "src/simulation/fast_mcf_camera.m",
+      "sha256": "7e7f52a8bbd57f2aa710a1c55d05e1d0e551d513d7be23f88f4a8516e0cf56b9"
+    },
+    {
+      "path": "src/simulation/fast_mcf_circular_bank.m",
+      "sha256": "b27302b4fb82c7b064bd523315fa869a406d22df93561faf9331d3d887e1e271"
+    },
+    {
+      "path": "src/simulation/fast_mcf_config.m",
+      "sha256": "24197fb3789722da041da325b7e539f730be20ece59d0eb8068d111b5be898b4"
+    },
+    {
+      "path": "src/simulation/fast_mcf_field.m",
+      "sha256": "67186f5f6b589671bda83c17ec990d5a1ba054ba88844cb15551d297cd14a96c"
+    },
+    {
+      "path": "src/simulation/fast_mcf_generate.m",
+      "sha256": "e1ca9553c58129cf13abb46cc81d8032c5e7ae93e6c2f7bcc4c2ace6ec4bd230"
+    },
+    {
+      "path": "src/simulation/fast_mcf_geometry.m",
+      "sha256": "1ab48af48b9ff36f12004d3514d9142706a96a2290090a49cf63fc73c9c78340"
+    },
+    {
+      "path": "src/simulation/fast_mcf_layout_bank.m",
+      "sha256": "07e4078d0543bb36f59ede209272633979d61aefe1c9f04976a9b6d18386405c"
+    },
+    {
+      "path": "src/simulation/fast_mcf_layout_generate.m",
+      "sha256": "0b292e7a038d535c1a056b872f978f2f946dc7636406ed538018af1f24f36bfe"
+    },
+    {
+      "path": "src/simulation/fast_mcf_layout_geometry.m",
+      "sha256": "aeaabf4241d0047886798e56f71f6bb875a431e361e31beee917a263a1a5e3c8"
+    },
+    {
+      "path": "src/simulation/fast_mcf_noise_camera.m",
+      "sha256": "e5457dfa5d7ad3f07838ef259d9bf9f9fa061bc67c9c3de4afd11a4f27395a3e"
+    },
+    {
+      "path": "src/simulation/fast_mcf_noise_generate.m",
+      "sha256": "79c602f6880acf76f0aaec32d4801de1d15cfe14539a033914df198d5aa75116"
+    },
+    {
+      "path": "src/simulation/fast_mcf_pixel_average.m",
+      "sha256": "761f93f20f5b6b67e8b0d827b907117df15c938bb817ba4c054aa02d77fa79f2"
+    },
+    {
+      "path": "src/simulation/fast_mcf_transfer.m",
+      "sha256": "500b289cda9f985ed38c6cc404a34153c22c18a97b21e648bba84b259cd79456"
+    }
+  ],
+  "git_commit": "unavailable; source hashes authoritative"
+}

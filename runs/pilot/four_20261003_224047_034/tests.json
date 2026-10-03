@@ -1,0 +1,14 @@
+{
+  "gradient_directional": 2.8792856987536197E-11,
+  "zero_finite": true,
+  "raar_formula": 1.3264706295193641E-15,
+  "raar_beta_zero": 0,
+  "raar_fixed_point": 3.9907156411847495E-15,
+  "legacy_equivalence": 0,
+  "budget_and_projection": true,
+  "lbfgs_descent": true,
+  "lbfgs_accounting": true,
+  "early_stop": true,
+  "rejection_accounting": true,
+  "passed": true
+}

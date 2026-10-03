@@ -1,0 +1,26 @@
+[
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\HIO_iter010.mat",
+    "iteration": 10,
+    "seconds": 0.039952600000000005,
+    "reused": false
+  },
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\HIO_iter020.mat",
+    "iteration": 20,
+    "seconds": 0.0793826,
+    "reused": false
+  },
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\HIO_iter030.mat",
+    "iteration": 30,
+    "seconds": 0.120188,
+    "reused": false
+  },
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\HIO_iter040.mat",
+    "iteration": 40,
+    "seconds": 0.16164910000000002,
+    "reused": false
+  }
+]

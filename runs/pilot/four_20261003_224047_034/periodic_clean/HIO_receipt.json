@@ -1,0 +1,7 @@
+{
+  "method": "HIO",
+  "input_sha256": "d1293cd9ef42bd0a5e24a2b0af5b5047c7894e3b372df5e8611dd8b6950ff18e",
+  "result_sha256": "8db9ab22a9d262502a1c9071dd4c8576614c5c42c045f4c3cc04979b55177bdd",
+  "stop_reason": "propagation_budget",
+  "solver_propagations": 200
+}

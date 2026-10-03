@@ -1,0 +1,7 @@
+{
+  "method": "RAAR",
+  "input_sha256": "d1293cd9ef42bd0a5e24a2b0af5b5047c7894e3b372df5e8611dd8b6950ff18e",
+  "result_sha256": "19ab6142aa03d5a7ee698060d9a3b448fe13ead99d8a0278902a1617e470b9e4",
+  "stop_reason": "propagation_budget",
+  "solver_propagations": 200
+}

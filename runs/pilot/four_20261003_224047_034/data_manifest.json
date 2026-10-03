@@ -1,0 +1,310 @@
+[
+  {
+    "case": "periodic_clean",
+    "source_run": "mcf_20261003_224006_279_01",
+    "input_sha256": "d1293cd9ef42bd0a5e24a2b0af5b5047c7894e3b372df5e8611dd8b6950ff18e",
+    "truth_sha256": "7c4b588fc3d06030a6fde92a0adb72bed9a34579fe98fac3e4091305a78fcd1e",
+    "calibration_id": "mcf_20261003_224006_279_01:saved_known_synthetic_reference",
+    "seed": 2.0261003E+7,
+    "source_config_sha256": "7ce3ae10214d2a597d260c224a06b1ee0d70484afe049db0b93b51b62b428337",
+    "physical_config": {
+      "version": "circular-mcf-v1",
+      "n": 256,
+      "dx": 5E-7,
+      "oversample": 2,
+      "lambda": 5.32E-7,
+      "z": 0.00012,
+      "reference_z": [
+        0.0001,
+        0.00012
+      ],
+      "pitch": 3.2E-6,
+      "core_diameter_nominal": 2E-6,
+      "patch_radius": 2.2E-5,
+      "mode_radius": 9E-7,
+      "mode_width_variation": 0.1,
+      "jitter_fraction": 0.12,
+      "gain_range": [
+        0.75,
+        1
+      ],
+      "mode_truncation_radii": 3,
+      "support_radius": 2.9E-5,
+      "roi_fraction": 0.15,
+      "seed": 2.0261003E+7,
+      "noise_seed": 3.102026E+6,
+      "peak_photons": 200,
+      "read_noise_electrons": 1,
+      "beta": 0.2,
+      "iterations": 40,
+      "checkpoints": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_wall_seconds": 600,
+      "scenes": [
+        "mixed"
+      ],
+      "conditions": [
+        "clean",
+        "shot_read"
+      ],
+      "methods": [
+        "HIO",
+        "ER"
+      ],
+      "backend": "CPU double",
+      "operator": "centered angular spectrum envelope, standard FFT DC",
+      "calibration": "known synthetic reference field, common to HIO and ER",
+      "geometry": "synthetic full circular facet; explicit cladding disk",
+      "camera": "subpixel intensity average, fixed exposure from blank reference",
+      "support": "common outer disk; individual core geometry not supplied to solver",
+      "initialization": "known synthetic reference complex field",
+      "truth_access": "evaluation_only files; scorer only, no OS-enforced isolation",
+      "parameter_selection": "fixed seed and final iteration; no truth-based selection",
+      "assumptions": "scalar single-mode cores; diagonal transmission; sample at input facet; one polarization; free-space detection; mode width and noise chosen for pilot",
+      "pending": "measured core map/mode radii; objective pupil and magnification; coupling, polarization drift, estimated reference calibration",
+      "units": "meters, radians, relative field amplitude, photoelectrons",
+      "facet_radius": 2.6E-5,
+      "reference_power": 1E-9,
+      "reference_photons": 200000,
+      "layout_bank": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\circular_20261003_224006_279\\layout_bank.mat",
+      "layout_bank_sha256": "abb6cd4444897434a7f19b1b4130302232715574821e7a58f1ae20b6b314af29",
+      "layout": "periodic",
+      "run_id": "mcf_20261003_224006_279_01"
+    }
+  },
+  {
+    "case": "periodic_shot_read",
+    "source_run": "mcf_20261003_224006_279_01",
+    "input_sha256": "895a11b8d07ead7519ef28920ba7c660ae5ba3d8e38bd61aefa2215458fe4c73",
+    "truth_sha256": "7c4b588fc3d06030a6fde92a0adb72bed9a34579fe98fac3e4091305a78fcd1e",
+    "calibration_id": "mcf_20261003_224006_279_01:saved_known_synthetic_reference",
+    "seed": 2.0261003E+7,
+    "source_config_sha256": "7ce3ae10214d2a597d260c224a06b1ee0d70484afe049db0b93b51b62b428337",
+    "physical_config": {
+      "version": "circular-mcf-v1",
+      "n": 256,
+      "dx": 5E-7,
+      "oversample": 2,
+      "lambda": 5.32E-7,
+      "z": 0.00012,
+      "reference_z": [
+        0.0001,
+        0.00012
+      ],
+      "pitch": 3.2E-6,
+      "core_diameter_nominal": 2E-6,
+      "patch_radius": 2.2E-5,
+      "mode_radius": 9E-7,
+      "mode_width_variation": 0.1,
+      "jitter_fraction": 0.12,
+      "gain_range": [
+        0.75,
+        1
+      ],
+      "mode_truncation_radii": 3,
+      "support_radius": 2.9E-5,
+      "roi_fraction": 0.15,
+      "seed": 2.0261003E+7,
+      "noise_seed": 3.102026E+6,
+      "peak_photons": 200,
+      "read_noise_electrons": 1,
+      "beta": 0.2,
+      "iterations": 40,
+      "checkpoints": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_wall_seconds": 600,
+      "scenes": [
+        "mixed"
+      ],
+      "conditions": [
+        "clean",
+        "shot_read"
+      ],
+      "methods": [
+        "HIO",
+        "ER"
+      ],
+      "backend": "CPU double",
+      "operator": "centered angular spectrum envelope, standard FFT DC",
+      "calibration": "known synthetic reference field, common to HIO and ER",
+      "geometry": "synthetic full circular facet; explicit cladding disk",
+      "camera": "subpixel intensity average, fixed exposure from blank reference",
+      "support": "common outer disk; individual core geometry not supplied to solver",
+      "initialization": "known synthetic reference complex field",
+      "truth_access": "evaluation_only files; scorer only, no OS-enforced isolation",
+      "parameter_selection": "fixed seed and final iteration; no truth-based selection",
+      "assumptions": "scalar single-mode cores; diagonal transmission; sample at input facet; one polarization; free-space detection; mode width and noise chosen for pilot",
+      "pending": "measured core map/mode radii; objective pupil and magnification; coupling, polarization drift, estimated reference calibration",
+      "units": "meters, radians, relative field amplitude, photoelectrons",
+      "facet_radius": 2.6E-5,
+      "reference_power": 1E-9,
+      "reference_photons": 200000,
+      "layout_bank": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\circular_20261003_224006_279\\layout_bank.mat",
+      "layout_bank_sha256": "abb6cd4444897434a7f19b1b4130302232715574821e7a58f1ae20b6b314af29",
+      "layout": "periodic",
+      "run_id": "mcf_20261003_224006_279_01"
+    }
+  },
+  {
+    "case": "aperiodic_clean",
+    "source_run": "mcf_20261003_224006_279_02",
+    "input_sha256": "d23fb8a03eeb46f3e8d995f21cedd903fa39ddefbba68805bed0a99171d0de1e",
+    "truth_sha256": "7133b0ff5d977fc2debbf3af512f3719c1aca9942df8257b69a90586f6a27d93",
+    "calibration_id": "mcf_20261003_224006_279_02:saved_known_synthetic_reference",
+    "seed": 2.0261003E+7,
+    "source_config_sha256": "9e80ed9cd2560482f05a592517f46eb0b009f9800a834cacb15023bf8dba42ea",
+    "physical_config": {
+      "version": "circular-mcf-v1",
+      "n": 256,
+      "dx": 5E-7,
+      "oversample": 2,
+      "lambda": 5.32E-7,
+      "z": 0.00012,
+      "reference_z": [
+        0.0001,
+        0.00012
+      ],
+      "pitch": 3.2E-6,
+      "core_diameter_nominal": 2E-6,
+      "patch_radius": 2.2E-5,
+      "mode_radius": 9E-7,
+      "mode_width_variation": 0.1,
+      "jitter_fraction": 0.12,
+      "gain_range": [
+        0.75,
+        1
+      ],
+      "mode_truncation_radii": 3,
+      "support_radius": 2.9E-5,
+      "roi_fraction": 0.15,
+      "seed": 2.0261003E+7,
+      "noise_seed": 3.102026E+6,
+      "peak_photons": 200,
+      "read_noise_electrons": 1,
+      "beta": 0.2,
+      "iterations": 40,
+      "checkpoints": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_wall_seconds": 600,
+      "scenes": [
+        "mixed"
+      ],
+      "conditions": [
+        "clean",
+        "shot_read"
+      ],
+      "methods": [
+        "HIO",
+        "ER"
+      ],
+      "backend": "CPU double",
+      "operator": "centered angular spectrum envelope, standard FFT DC",
+      "calibration": "known synthetic reference field, common to HIO and ER",
+      "geometry": "synthetic full circular facet; explicit cladding disk",
+      "camera": "subpixel intensity average, fixed exposure from blank reference",
+      "support": "common outer disk; individual core geometry not supplied to solver",
+      "initialization": "known synthetic reference complex field",
+      "truth_access": "evaluation_only files; scorer only, no OS-enforced isolation",
+      "parameter_selection": "fixed seed and final iteration; no truth-based selection",
+      "assumptions": "scalar single-mode cores; diagonal transmission; sample at input facet; one polarization; free-space detection; mode width and noise chosen for pilot",
+      "pending": "measured core map/mode radii; objective pupil and magnification; coupling, polarization drift, estimated reference calibration",
+      "units": "meters, radians, relative field amplitude, photoelectrons",
+      "facet_radius": 2.6E-5,
+      "reference_power": 1E-9,
+      "reference_photons": 200000,
+      "layout_bank": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\circular_20261003_224006_279\\layout_bank.mat",
+      "layout_bank_sha256": "abb6cd4444897434a7f19b1b4130302232715574821e7a58f1ae20b6b314af29",
+      "layout": "aperiodic",
+      "run_id": "mcf_20261003_224006_279_02"
+    }
+  },
+  {
+    "case": "aperiodic_shot_read",
+    "source_run": "mcf_20261003_224006_279_02",
+    "input_sha256": "08c2afe92760042ee8b95b5cd71d9c832b42839b7b5815f2bf225a50e5ea33f2",
+    "truth_sha256": "7133b0ff5d977fc2debbf3af512f3719c1aca9942df8257b69a90586f6a27d93",
+    "calibration_id": "mcf_20261003_224006_279_02:saved_known_synthetic_reference",
+    "seed": 2.0261003E+7,
+    "source_config_sha256": "9e80ed9cd2560482f05a592517f46eb0b009f9800a834cacb15023bf8dba42ea",
+    "physical_config": {
+      "version": "circular-mcf-v1",
+      "n": 256,
+      "dx": 5E-7,
+      "oversample": 2,
+      "lambda": 5.32E-7,
+      "z": 0.00012,
+      "reference_z": [
+        0.0001,
+        0.00012
+      ],
+      "pitch": 3.2E-6,
+      "core_diameter_nominal": 2E-6,
+      "patch_radius": 2.2E-5,
+      "mode_radius": 9E-7,
+      "mode_width_variation": 0.1,
+      "jitter_fraction": 0.12,
+      "gain_range": [
+        0.75,
+        1
+      ],
+      "mode_truncation_radii": 3,
+      "support_radius": 2.9E-5,
+      "roi_fraction": 0.15,
+      "seed": 2.0261003E+7,
+      "noise_seed": 3.102026E+6,
+      "peak_photons": 200,
+      "read_noise_electrons": 1,
+      "beta": 0.2,
+      "iterations": 40,
+      "checkpoints": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_wall_seconds": 600,
+      "scenes": [
+        "mixed"
+      ],
+      "conditions": [
+        "clean",
+        "shot_read"
+      ],
+      "methods": [
+        "HIO",
+        "ER"
+      ],
+      "backend": "CPU double",
+      "operator": "centered angular spectrum envelope, standard FFT DC",
+      "calibration": "known synthetic reference field, common to HIO and ER",
+      "geometry": "synthetic full circular facet; explicit cladding disk",
+      "camera": "subpixel intensity average, fixed exposure from blank reference",
+      "support": "common outer disk; individual core geometry not supplied to solver",
+      "initialization": "known synthetic reference complex field",
+      "truth_access": "evaluation_only files; scorer only, no OS-enforced isolation",
+      "parameter_selection": "fixed seed and final iteration; no truth-based selection",
+      "assumptions": "scalar single-mode cores; diagonal transmission; sample at input facet; one polarization; free-space detection; mode width and noise chosen for pilot",
+      "pending": "measured core map/mode radii; objective pupil and magnification; coupling, polarization drift, estimated reference calibration",
+      "units": "meters, radians, relative field amplitude, photoelectrons",
+      "facet_radius": 2.6E-5,
+      "reference_power": 1E-9,
+      "reference_photons": 200000,
+      "layout_bank": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\circular_20261003_224006_279\\layout_bank.mat",
+      "layout_bank_sha256": "abb6cd4444897434a7f19b1b4130302232715574821e7a58f1ae20b6b314af29",
+      "layout": "aperiodic",
+      "run_id": "mcf_20261003_224006_279_02"
+    }
+  }
+]

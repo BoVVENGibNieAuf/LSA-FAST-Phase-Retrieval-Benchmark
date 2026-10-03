@@ -1,0 +1,30 @@
+[
+  {
+    "method": "HIO",
+    "input_sha256": "08c2afe92760042ee8b95b5cd71d9c832b42839b7b5815f2bf225a50e5ea33f2",
+    "result_sha256": "040fda4ab6b139658f58f5e68d10b1427011602a45c2699664eaaccac552ed91",
+    "stop_reason": "propagation_budget",
+    "solver_propagations": 200
+  },
+  {
+    "method": "ER",
+    "input_sha256": "08c2afe92760042ee8b95b5cd71d9c832b42839b7b5815f2bf225a50e5ea33f2",
+    "result_sha256": "494a4305b9264094a5170cab06e369e51564b0f8613d46e071072d6c4456f540",
+    "stop_reason": "propagation_budget",
+    "solver_propagations": 200
+  },
+  {
+    "method": "RAAR",
+    "input_sha256": "08c2afe92760042ee8b95b5cd71d9c832b42839b7b5815f2bf225a50e5ea33f2",
+    "result_sha256": "861df482a1ccec4de23e3683b3d8da0e2790dbfb887b895bf43da5d0e96b72e1",
+    "stop_reason": "propagation_budget",
+    "solver_propagations": 200
+  },
+  {
+    "method": "LBFGS",
+    "input_sha256": "08c2afe92760042ee8b95b5cd71d9c832b42839b7b5815f2bf225a50e5ea33f2",
+    "result_sha256": "fd7bd1262b5c8ae2c20ecabbf6d1542b231c2a477e7ebd4c818bb9210c258fea",
+    "stop_reason": "propagation_budget",
+    "solver_propagations": 200
+  }
+]

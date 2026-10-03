@@ -1,0 +1,14 @@
+{
+  "layout": "periodic",
+  "reference_power": 1E-9,
+  "reference_photons": 200000,
+  "illumination_scale": 1.2466353827946144,
+  "core_count": 163,
+  "minimum_spacing_m": 3.1999999999999965E-6,
+  "generation_propagations": 5,
+  "oversample_2_vs_4_amplitude_nrmse": 0.0042206238639342555,
+  "grid_convergence_tolerance": 0.02,
+  "detector_edge_energy_fraction": 5.2422938270704533E-5,
+  "edge_tolerance": 0.005,
+  "exposure_electrons_per_intensity": 50.000000104723519
+}

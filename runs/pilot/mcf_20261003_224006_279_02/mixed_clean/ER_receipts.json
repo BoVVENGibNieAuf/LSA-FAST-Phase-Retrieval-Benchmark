@@ -1,0 +1,26 @@
+[
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\ER_iter010.mat",
+    "iteration": 10,
+    "seconds": 0.0433977,
+    "reused": false
+  },
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\ER_iter020.mat",
+    "iteration": 20,
+    "seconds": 0.082920000000000008,
+    "reused": false
+  },
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\ER_iter030.mat",
+    "iteration": 30,
+    "seconds": 0.12240940000000002,
+    "reused": false
+  },
+  {
+    "path": "C:\\projects\\FAST_Phase_Retrieval_Benchmark\\runs\\pilot\\mcf_20261003_224006_279_02\\mixed_clean\\ER_iter040.mat",
+    "iteration": 40,
+    "seconds": 0.16399340000000004,
+    "reused": false
+  }
+]

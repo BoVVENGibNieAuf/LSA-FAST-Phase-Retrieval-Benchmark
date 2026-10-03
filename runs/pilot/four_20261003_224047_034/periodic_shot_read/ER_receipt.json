@@ -1,0 +1,7 @@
+{
+  "method": "ER",
+  "input_sha256": "895a11b8d07ead7519ef28920ba7c660ae5ba3d8e38bd61aefa2215458fe4c73",
+  "result_sha256": "d2194b46e4384a0875107eea99f56d2f2d0ff1639e4ae85acce2c35fedbf4beb",
+  "stop_reason": "propagation_budget",
+  "solver_propagations": 200
+}

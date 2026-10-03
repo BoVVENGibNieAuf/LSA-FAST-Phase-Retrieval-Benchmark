@@ -1,0 +1,50 @@
+{
+  "matlab": "24.2.0.3361896 (R2024b) Update 10",
+  "computer": "PCWIN64",
+  "sources": [
+    {
+      "path": "configs/fast_four_solver_config.m",
+      "sha256": "4b1bf5c62d669be79ba3704cbed640678a29f568a41f3c855eb9daae5926791d"
+    },
+    {
+      "path": "src/solvers/fast_four_solve.m",
+      "sha256": "ce387bea13c866af6048b9c1acf9c2268646a0aa10d9bdd1e236cb049fd56408"
+    },
+    {
+      "path": "src/solvers/fast_raar_step.m",
+      "sha256": "dfe303a270e581afbdde86dafe340d8d49f06e9df46f466bf6c93c6882154788"
+    },
+    {
+      "path": "src/solvers/fast_amplitude_objective.m",
+      "sha256": "c2c9b3e60c8ae70cfd8943f7916f7624f500ca10ec8c89f58c7b53b3623cdccf"
+    },
+    {
+      "path": "src/solvers/fast_project_amplitude.m",
+      "sha256": "f06977947a2e4fc972983d5416301f3919189005902e7a20d39b723e569d8c8d"
+    },
+    {
+      "path": "src/solvers/fast_support_step.m",
+      "sha256": "26194f471f31166e774d751bdd2d9ce9a1b8926a6f0a5d57e8081f2865c202dd"
+    },
+    {
+      "path": "src/simulation/fast_mcf_transfer.m",
+      "sha256": "500b289cda9f985ed38c6cc404a34153c22c18a97b21e648bba84b259cd79456"
+    },
+    {
+      "path": "src/simulation/fast_mcf_config.m",
+      "sha256": "24197fb3789722da041da325b7e539f730be20ece59d0eb8068d111b5be898b4"
+    },
+    {
+      "path": "src/metrics/fast_field_error.m",
+      "sha256": "00f1e323ddd9cf042abc78dfb2badefa8713701e5e132ad9707e85d5a95ad289"
+    },
+    {
+      "path": "tools/run_fast_four_solvers.m",
+      "sha256": "c91099bdb0ae2ea1c6a8f6a531f5ecec2923021b2f9eb610c2b1f0bde5c993bd"
+    },
+    {
+      "path": "tests/test_fast_four_solvers.m",
+      "sha256": "c6739e231124a02b3f498af865265b376d829dc8e60d488e70f1d582265d960d"
+    }
+  ]
+}

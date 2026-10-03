@@ -1,0 +1,922 @@
+[
+  {
+    "path": "evaluation_only/mcf_20261003_224006_279_01/fiber_model.mat",
+    "size": 8568,
+    "sha256": "d9ef6d3a133123874ce151e0d25384e60ce067010de69faaf7d263abdec1275d"
+  },
+  {
+    "path": "evaluation_only/mcf_20261003_224006_279_01/mixed_truth.mat",
+    "size": 110111,
+    "sha256": "7c4b588fc3d06030a6fde92a0adb72bed9a34579fe98fac3e4091305a78fcd1e"
+  },
+  {
+    "path": "evaluation_only/mcf_20261003_224006_279_02/fiber_model.mat",
+    "size": 10888,
+    "sha256": "1749e19dd40f6c0b20899db72d807aa82fa96048d24e200b8e5eb99f96c3d3c4"
+  },
+  {
+    "path": "evaluation_only/mcf_20261003_224006_279_02/mixed_truth.mat",
+    "size": 118139,
+    "sha256": "7133b0ff5d977fc2debbf3af512f3719c1aca9942df8257b69a90586f6a27d93"
+  },
+  {
+    "path": "runs/latest_circular.json",
+    "size": 178,
+    "sha256": "f34ec692454afd35a228688777145f8831f35f6af790d22b684a716e4b2fdb63"
+  },
+  {
+    "path": "runs/pilot/circular_20261003_224006_279/circular_geometry.png",
+    "size": 82412,
+    "sha256": "a7ba746614e1b6a4f02be1a9ef10c800593bce1150b01f46c33480e1b7f8d489"
+  },
+  {
+    "path": "runs/pilot/circular_20261003_224006_279/geometry_checks.json",
+    "size": 87,
+    "sha256": "29ce147ea8b45fac682d75d856af1adcc158da7b8fec3f6bae6ee7b4a708f426"
+  },
+  {
+    "path": "runs/pilot/circular_20261003_224006_279/layout_bank.mat",
+    "size": 3319,
+    "sha256": "abb6cd4444897434a7f19b1b4130302232715574821e7a58f1ae20b6b314af29"
+  },
+  {
+    "path": "runs/pilot/circular_20261003_224006_279/protocol.json",
+    "size": 536,
+    "sha256": "13369364ead8f11d5331cbb624106348432a44ab09cab36cb19e64d4407b6fbb"
+  },
+  {
+    "path": "runs/pilot/circular_20261003_224006_279/status.json",
+    "size": 159,
+    "sha256": "bdb1f1f104f96bdc06fd1c9ee5f32b9e2908946e44e7675f3d8e252c3a071d81"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/REPORT.md",
+    "size": 3550,
+    "sha256": "7a40e4460c8b03eff9d3bddec1c48c09f5eaf25ef41d154704ea02f6bbce30d0"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/ER_attempt_20261003_224104_062/ER_budget0080.mat",
+    "size": 392145,
+    "sha256": "1df0b4da04b2a79911ab41401f4cb537b811c662aec97ea56feb92fd600cb58d"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/ER_attempt_20261003_224104_062/ER_budget0200.mat",
+    "size": 391829,
+    "sha256": "42a8f211d98d0fd009f14b50cf6c821ac19e1183052da6c2c8062cd9baffddd7"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/ER_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/ER_receipt.json",
+    "size": 262,
+    "sha256": "bedb998de75e19829fa139d27ba610b9138f9e6c46f3b4a312cf81c4ab95f257"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/ER_result.mat",
+    "size": 784865,
+    "sha256": "bad981c5cb3c5438003069eedd34915d014475fc66af07a1aa2fc9ba81736087"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/HIO_attempt_20261003_224103_383/HIO_budget0080.mat",
+    "size": 1212699,
+    "sha256": "6c72625c71ba2f89ec45a97aeecdfa0159088cb7e893e6babf52f41da5993eef"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/HIO_attempt_20261003_224103_383/HIO_budget0200.mat",
+    "size": 1213028,
+    "sha256": "1919815a78e3ef1736a5e01b53ba4f1d71a693e8bd12ef9590289ebd0f0fad40"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/HIO_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/HIO_receipt.json",
+    "size": 263,
+    "sha256": "974528b0a20836a814f4789b57f83782338ecf2afd0fae6f60cac011eb41ea84"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/HIO_result.mat",
+    "size": 2426179,
+    "sha256": "1a43e052b2fe82939298d753c9a75385dbb5255340e3c87cada27d124ee97dff"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/LBFGS_attempt_20261003_224105_317/LBFGS_budget0080.mat",
+    "size": 339258,
+    "sha256": "b2944a449566866930ac6bcea7ed692e90b3f78d568d0fdc80b107ea0773d2c2"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/LBFGS_attempt_20261003_224105_317/LBFGS_budget0200.mat",
+    "size": 339250,
+    "sha256": "c0008d929b941e658a5d35dba82c8f92cdcf2b2fe6231b5b13f133ee446b1015"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/LBFGS_receipt.json",
+    "size": 265,
+    "sha256": "6eda2eae00396276a1edc07ca394f4574041031a2fe970b3c188f2b7c1ced8f6"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/LBFGS_result.mat",
+    "size": 681257,
+    "sha256": "02b0f508f7347654ae37f70f32ff99075017a3166c19c68e004a0da626242c83"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/RAAR_attempt_20261003_224104_621/RAAR_budget0080.mat",
+    "size": 1212422,
+    "sha256": "fb4a879a6d34065e1d9956608adc0019677acfd4469ffe8b606c02835acfe502"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/RAAR_attempt_20261003_224104_621/RAAR_budget0200.mat",
+    "size": 1212537,
+    "sha256": "3409d6899cee45d9da75587ed3eb44ca1e3dfca38634004e30755090aefb505f"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/RAAR_receipt.json",
+    "size": 264,
+    "sha256": "8eff187fed0db7b2693753f771572ed32c8bfb87219381b44d33b94c4606e825"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/RAAR_result.mat",
+    "size": 2425420,
+    "sha256": "1ec97fcf5cf41d86a2efed46601ebcf9e7fee3c28cd4d889e0e8dd58f5afaf88"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/cost_curves.png",
+    "size": 101752,
+    "sha256": "f8840ef4dcfde94c15483e5671896d2532775f2c02a6e3ec3b24e9169e3770e7"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/fields_200.png",
+    "size": 127721,
+    "sha256": "674ae74488418d5c98a84afd2753eccdea0e4c63caee362461b9aa7821f7942f"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_clean/receipts.json",
+    "size": 1120,
+    "sha256": "8e709a4c70ab22ee07836eb991458ed1779c99491b1d5b3c4eeeb51bf6772bb6"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/ER_attempt_20261003_224111_984/ER_budget0080.mat",
+    "size": 394547,
+    "sha256": "cc126a3e97de0e8b40c95db70e5ee73a59008cc57c5e874d98d9b761a354a41b"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/ER_attempt_20261003_224111_984/ER_budget0200.mat",
+    "size": 395023,
+    "sha256": "f32dedf879b4ad81c4c5d0886d815f864d30a34f289abee908fd5f46f1a069b3"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/ER_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/ER_receipt.json",
+    "size": 262,
+    "sha256": "15c0dcffcc80ddbd32ae2c700a2b0326d00a1e647cf2d98840a9b06d7cb7f3c5"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/ER_result.mat",
+    "size": 790387,
+    "sha256": "494a4305b9264094a5170cab06e369e51564b0f8613d46e071072d6c4456f540"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/HIO_attempt_20261003_224111_342/HIO_budget0080.mat",
+    "size": 1213135,
+    "sha256": "41aa1fbe735a5c66ad5ea9be3b4587cac280c26885e6e6b843eb3212b7501402"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/HIO_attempt_20261003_224111_342/HIO_budget0200.mat",
+    "size": 1213273,
+    "sha256": "f608a1a14d1132552871d50dbd60894fc6a1a9c687a615f560d409dd7af1b4b4"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/HIO_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/HIO_receipt.json",
+    "size": 263,
+    "sha256": "8059590abbf5a0cc9411031aedee6e2085a32f4e18a6bab4da8b88377c436e51"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/HIO_result.mat",
+    "size": 2426789,
+    "sha256": "040fda4ab6b139658f58f5e68d10b1427011602a45c2699664eaaccac552ed91"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/LBFGS_attempt_20261003_224113_345/LBFGS_budget0080.mat",
+    "size": 339116,
+    "sha256": "8454a8c5a5bfca3cafc2547fe2dce5f75ca1af9d53839d68a5834de64e71c316"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/LBFGS_attempt_20261003_224113_345/LBFGS_budget0200.mat",
+    "size": 339219,
+    "sha256": "5ff8b515f787ccd977c7d1d48763c73e13c17d9c63d560511858cda9628c6a8c"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/LBFGS_receipt.json",
+    "size": 265,
+    "sha256": "480d526a2ac98c92b9c9c6df5f6df9f9e7da837cb4fa9629177364ada1594e90"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/LBFGS_result.mat",
+    "size": 681003,
+    "sha256": "fd7bd1262b5c8ae2c20ecabbf6d1542b231c2a477e7ebd4c818bb9210c258fea"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/RAAR_attempt_20261003_224112_662/RAAR_budget0080.mat",
+    "size": 1213229,
+    "sha256": "da6dc38a0f9e0ccf365fb3e30c39d932ad3e4a5d77b2544398e2ad5ec69cfe39"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/RAAR_attempt_20261003_224112_662/RAAR_budget0200.mat",
+    "size": 1213168,
+    "sha256": "64cb2fdfb4dbdf4f621f1e8946dadd926313ea9d1d412faed35cada1bd629298"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/RAAR_receipt.json",
+    "size": 264,
+    "sha256": "3b2e9befc4177216c6d80e1a4050512cb3ccad28a4d31e8a272a856c9c82c231"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/RAAR_result.mat",
+    "size": 2426964,
+    "sha256": "861df482a1ccec4de23e3683b3d8da0e2790dbfb887b895bf43da5d0e96b72e1"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/cost_curves.png",
+    "size": 83891,
+    "sha256": "746770efd6e36187b704f020766958b8ccaab10d01a1edb31d603f9087495f44"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/fields_200.png",
+    "size": 144056,
+    "sha256": "fe8b12ea4196645cf9dabaaead000f181997dbc8c7abfa203b9e848e627a5f49"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/receipts.json",
+    "size": 1120,
+    "sha256": "9e2f1f41600c364ea27326ee60638d21174499f1f7c3a6e16c08ecfe7af750d4"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/config.json",
+    "size": 1145,
+    "sha256": "c21ccf694720af64217c6235728567fdc6f4ef1375866e59c1315b334f67e083"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/data_manifest.json",
+    "size": 11754,
+    "sha256": "92f716089a89981645cc1ed65d46cf92a7806624628a167c07e896d1d5d1b8d8"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/failures.json",
+    "size": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/matlab.log",
+    "size": 102,
+    "sha256": "2202c41ce67ad186d2f0f1c41d858bb9a858aba3f10c8b027dfb75e201f6d63f"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/metrics.csv",
+    "size": 6068,
+    "sha256": "b8ba7d371fcc9388e7a47115b5a0ce4edbd7b8879a8a573fca5324227521b025"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/metrics.json",
+    "size": 21188,
+    "sha256": "6162bea6919c8ba42c909ee78b7667ea8ee805f32128af26a72158a9855ca046"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/ER_attempt_20261003_224047_899/ER_budget0080.mat",
+    "size": 392579,
+    "sha256": "7cfd1f55718a303b9c9484c1818456072e76c3bddf150e22ae64442e757c1701"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/ER_attempt_20261003_224047_899/ER_budget0200.mat",
+    "size": 392482,
+    "sha256": "9424322c0a36041cb9492fc8c1ff33b21ae24abbdd02c0778986ab95f4da3724"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/ER_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/ER_receipt.json",
+    "size": 262,
+    "sha256": "5f3648f3494b4b60cb95ec5946521776334f1a48704d812f7fe9eb773a7fa974"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/ER_result.mat",
+    "size": 786001,
+    "sha256": "5b2df7b0b623af4f6e56485e14ef406ed55a7423cbff6ec566fc38c339293034"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/HIO_attempt_20261003_224047_256/HIO_budget0080.mat",
+    "size": 1212934,
+    "sha256": "5c99290f7fec68e84db2bbc62d1b3b3470f562885f01ef59465d17e891e497bc"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/HIO_attempt_20261003_224047_256/HIO_budget0200.mat",
+    "size": 1212767,
+    "sha256": "595fd9faf2d5b84a59ab5eacf162f23e1e66982b8b6f950c5b9a86dd412a9117"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/HIO_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/HIO_receipt.json",
+    "size": 263,
+    "sha256": "fd1b560c94ae8ae98d85c69c3f1b4fb86bc0af175fdc9b2178c98958d0a4a135"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/HIO_result.mat",
+    "size": 2426365,
+    "sha256": "8db9ab22a9d262502a1c9071dd4c8576614c5c42c045f4c3cc04979b55177bdd"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/LBFGS_attempt_20261003_224049_230/LBFGS_budget0080.mat",
+    "size": 339336,
+    "sha256": "3cc3bc216815afcef49bfd483da4322906c749465b0eb0df9f0353bce467edbc"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/LBFGS_attempt_20261003_224049_230/LBFGS_budget0200.mat",
+    "size": 339356,
+    "sha256": "97ef8cbd100598dd22fc1377efcb48a426665e21ac35ae9516abbdfe9143813b"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/LBFGS_receipt.json",
+    "size": 265,
+    "sha256": "8090d09d609bfb6382af176e21217164eaa7c24e2d30ee56debde227a97c64a0"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/LBFGS_result.mat",
+    "size": 681411,
+    "sha256": "7fbffb1745d0efb7b5a137f6573b54ff7807dbf2cc0a310098e75c7ae1a8e72f"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/RAAR_attempt_20261003_224048_488/RAAR_budget0080.mat",
+    "size": 1212596,
+    "sha256": "e0834f1589e8a8e2b8122b82905109cacb52e2e7d150e283631841ecf50cd899"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/RAAR_attempt_20261003_224048_488/RAAR_budget0200.mat",
+    "size": 1212423,
+    "sha256": "2820c1c0adbf27e44a3046c1e937a50fcff9e7f8bff844d872e5d4cc712a8e92"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/RAAR_receipt.json",
+    "size": 264,
+    "sha256": "be7f667f187c3600db65ae9f156280e5717e92283a6b2b2872e8c28b8bf3ed36"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/RAAR_result.mat",
+    "size": 2425464,
+    "sha256": "19ab6142aa03d5a7ee698060d9a3b448fe13ead99d8a0278902a1617e470b9e4"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/cost_curves.png",
+    "size": 99948,
+    "sha256": "049b77e292febc0c63cf65366c25dc2216f398051ceda2b3cc5562dc2941a008"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/fields_200.png",
+    "size": 124183,
+    "sha256": "9753d677f8699caa2b68470319d5953a517a71db3d4e3f1deae7d355b802b0ac"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_clean/receipts.json",
+    "size": 1120,
+    "sha256": "1e6fb4569703685e403e3d4ce5c81e15d51057676a41980982954151a9859ebc"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/ER_attempt_20261003_224056_181/ER_budget0080.mat",
+    "size": 394694,
+    "sha256": "e006ff9eea77d188c7980cda8cece8a7c576060f91a2d795021899482bd6f04f"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/ER_attempt_20261003_224056_181/ER_budget0200.mat",
+    "size": 394828,
+    "sha256": "22a4df0a24f4f247c32607c04ce5e18591af6edf83b29da1df177e324275f15e"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/ER_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/ER_receipt.json",
+    "size": 262,
+    "sha256": "6dbb65e768e6160f6890f37d266187ee57a15f442297ce6f9de0247a938dd29b"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/ER_result.mat",
+    "size": 790203,
+    "sha256": "d2194b46e4384a0875107eea99f56d2f2d0ff1639e4ae85acce2c35fedbf4beb"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/HIO_attempt_20261003_224055_547/HIO_budget0080.mat",
+    "size": 1212911,
+    "sha256": "297640cc7d4cb9cd8f6e7888e424ebad41f9cf8d12096833109fa18d1f649a63"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/HIO_attempt_20261003_224055_547/HIO_budget0200.mat",
+    "size": 1213164,
+    "sha256": "d97cd6b7b41a9bbd6e43270b7cf771ef7f7b71248504e845d038ec0042985cf5"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/HIO_legacy_check.json",
+    "size": 43,
+    "sha256": "ad5f2919bee6f51ffb7c673b05677ce46d3b35f2fcaad424fbd834a940936353"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/HIO_receipt.json",
+    "size": 263,
+    "sha256": "a31ed69991ef164f98eb752c561211164461a5c62154d1a3f8df22bdb4f95d8d"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/HIO_result.mat",
+    "size": 2426648,
+    "sha256": "795dfa10f42019e5cb5dc6a07e32cfe490571153d5cb9848cecbc7b15901a6c3"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/LBFGS_attempt_20261003_224057_524/LBFGS_budget0080.mat",
+    "size": 339263,
+    "sha256": "40440e44e41cb702fe6d271343f77501e3ae7f2c28965931b718ac5932b029ef"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/LBFGS_attempt_20261003_224057_524/LBFGS_budget0200.mat",
+    "size": 339233,
+    "sha256": "493a402ba76a0e4a734c2af2cde6a68f85151b24bdf4ba4c1882a167005d507d"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/LBFGS_receipt.json",
+    "size": 265,
+    "sha256": "2d7028e571f1e8ce0421787d767742d57d7bc3edb8004b04327098d79fa735fe"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/LBFGS_result.mat",
+    "size": 681012,
+    "sha256": "81035c060e5090ffac016b1196800fcacd89df2a4e5314e7364711d85278516c"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/RAAR_attempt_20261003_224056_782/RAAR_budget0080.mat",
+    "size": 1213013,
+    "sha256": "354a0988f692b563ebde9be6b9e393dedc1a4d43dcb8b5b7ffedf4832f9c9706"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/RAAR_attempt_20261003_224056_782/RAAR_budget0200.mat",
+    "size": 1213067,
+    "sha256": "d8b93394679040c0f06686e3fe42a4697f56ce8cc25d82f60be7f6ab76d1fd2c"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/RAAR_receipt.json",
+    "size": 264,
+    "sha256": "0c3a5f72c9662ab9af3ebbbb5d7fde6eda2d3ff4484a728d1c6dea281a1a395e"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/RAAR_result.mat",
+    "size": 2426470,
+    "sha256": "da6d948fbd96d9c5436391dce1fc75bea972af81d4df141711c6d8dc78a7acd3"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/cost_curves.png",
+    "size": 92049,
+    "sha256": "b974346245e2b24b5125e440b627f1197f93771e15121ab631483ecc2a173f6b"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/fields_200.png",
+    "size": 139941,
+    "sha256": "b546809f5abfab80f83e9ee8eb48bcff726759130b52766b3663da7ebb35a515"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/periodic_shot_read/receipts.json",
+    "size": 1120,
+    "sha256": "9563eb598079bae5532a5d0878ba3f360eeaca84b441c98235cafc5fce331af5"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/provenance.json",
+    "size": 1699,
+    "sha256": "8860e1928083171569a1aa05641b60b89e4bbf2dda7faf11db134c4045b80f67"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/status.json",
+    "size": 164,
+    "sha256": "f28bde2979a1b12a27b415bbfc6e7e1cdcb6726f495d25d6016534c4e731be57"
+  },
+  {
+    "path": "runs/pilot/four_20261003_224047_034/tests.json",
+    "size": 371,
+    "sha256": "24f82c6ac9dd0a96ede2a9877d8208a30fa548cf7dedd8ade9ca058790de8614"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/MCF_model.png",
+    "size": 163595,
+    "sha256": "d1165a5462743beb8292f1c84e46bc241ffc8701d4c73d8482bc87b1384d6c2b"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/REPORT.md",
+    "size": 2899,
+    "sha256": "8982fbb61a8091fb0a1123b73a91b5df53c567f00365205e62d6291e79adf9fc"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/config.json",
+    "size": 2174,
+    "sha256": "7ce3ae10214d2a597d260c224a06b1ee0d70484afe049db0b93b51b62b428337"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/data_manifest.json",
+    "size": 428,
+    "sha256": "a956becc4a12cc21c9a7215a9386c66f5ceb075cd9c68db6df1bff2660701b31"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/generation_audit.json",
+    "size": 470,
+    "sha256": "be84d959857667189d16a5024b3072f2a84e5f36d1e5db38ddfb80be32fc7712"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/generation_audit_partial.mat",
+    "size": 528,
+    "sha256": "83938dae5fbb64d40272a393fbb7a78a21aa83222bc7f54cec2f92704920acfe"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/matlab.log",
+    "size": 175,
+    "sha256": "d43910054146e63488a31fef12eb805543159b878aed0e092a4126f09c6bcbcc"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/metrics.csv",
+    "size": 2868,
+    "sha256": "5d9a955210e16fe273258091b2b623c716f6e1debdcd5a816b902842da60905b"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/metrics.json",
+    "size": 10047,
+    "sha256": "f62019b6f0d8d3cefdcddefd615370c8c744e7c6dfad3e21527e58db7af97073"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/ER_iter010.mat",
+    "size": 392470,
+    "sha256": "7c1539cb66037d5e500dfe8a18c52995e1fb63b960ae059dd7bba675f933ca39"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/ER_iter020.mat",
+    "size": 392855,
+    "sha256": "81fcf57247d8f932e960cac7b01809d366709221dd95a12590e58cea250410c2"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/ER_iter030.mat",
+    "size": 393075,
+    "sha256": "ed2ba6b6a5215f7ff379c81c074b42e02be22759383fef7b9c9fbc6d870a0b1c"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/ER_iter040.mat",
+    "size": 393273,
+    "sha256": "2aaf135b5858053d488b455639530c258a8895e95472c7436e3033fd6c2c4ef3"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/ER_receipts.json",
+    "size": 858,
+    "sha256": "7a4f82bc740ff0f3b65c419606d2b372ccdcea294a1276995415dc29676d63ef"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/HIO_iter010.mat",
+    "size": 1212773,
+    "sha256": "7dea5f348e185ab8eb2d3720ffdb8e74a20db8d76e44ab8062b34ac4dc0a170c"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/HIO_iter020.mat",
+    "size": 1212966,
+    "sha256": "1bffc5fbfb7f244207f4eb6bab19e152f8a79d9a9c65da2f3d9bc5cfaf4c6eeb"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/HIO_iter030.mat",
+    "size": 1213033,
+    "sha256": "c8e17e9565f6954051cf46708ff14802f0443fe629b379126e9e31a572a2c7af"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/HIO_iter040.mat",
+    "size": 1213069,
+    "sha256": "6c492798f8e212315a3fe4a44c2300791681615e0d78be9a3cf9cec4d02f4809"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/HIO_receipts.json",
+    "size": 861,
+    "sha256": "30959f1dbb13bade002604b01baae373a373f25e098a5e06617eb23dc4bfa8f7"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/field_comparison.png",
+    "size": 158139,
+    "sha256": "c0f012a46fdc5f2bb4199cef3e7fd6c77ed579f9fdc08d2477631554aacd7f31"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean/metric_curves.png",
+    "size": 58517,
+    "sha256": "a0dce272ce36a0456a27cb81a5aa83181fce617bf5ec2ec0c6249caa4e2113d5"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_clean_input.mat",
+    "size": 604277,
+    "sha256": "d1293cd9ef42bd0a5e24a2b0af5b5047c7894e3b372df5e8611dd8b6950ff18e"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/ER_iter010.mat",
+    "size": 395504,
+    "sha256": "162de50e619e3ef427edc64c4a5c79dcb2ad8a0ecee5386584310be1ca62508d"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/ER_iter020.mat",
+    "size": 395229,
+    "sha256": "3398a6e27f5d511c4e4dc9cf377223e714f273e5536fa80e295d499a9d1c31a8"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/ER_iter030.mat",
+    "size": 395312,
+    "sha256": "b319d812e1c7c6fd683f9781ada8d4af34d350478530116d001b7f3e5018a789"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/ER_iter040.mat",
+    "size": 395209,
+    "sha256": "314b1bf18bfc5be6d1014d7050b1e3b1d981f975135dac14407157b41f71b086"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/ER_receipts.json",
+    "size": 852,
+    "sha256": "f983dd4b0ba43b39bc720da3d25eb3c4b8564d314278cc9e47135204bfef5a83"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/HIO_iter010.mat",
+    "size": 1214039,
+    "sha256": "b028565705062ce1dbc78b0588c4f49e8220b593c924c5602f71ebe0de58d017"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/HIO_iter020.mat",
+    "size": 1213496,
+    "sha256": "807b7e2d5d374e2a2c027813b7b843d590dbb534494c764aa70645b8b721dc39"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/HIO_iter030.mat",
+    "size": 1213008,
+    "sha256": "740c43dfe0b65c27d7a93d6633d73768c302d6eb083079d052a87d2f1c0587ae"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/HIO_iter040.mat",
+    "size": 1213080,
+    "sha256": "069f6fc598ed88832494c167328888ec456da6a0eda1381193a329d4caa6dc9d"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/HIO_receipts.json",
+    "size": 867,
+    "sha256": "c4a0be19c84aba750bdee6be3b812634e9ec50a9181affcd612d2367265cf756"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/field_comparison.png",
+    "size": 176752,
+    "sha256": "99fedef434c594de1adb7e5c4d1aab3924f6dbd8b272291e667c20d6628ef707"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read/metric_curves.png",
+    "size": 46835,
+    "sha256": "725901ea43d18e98099d1fa3e0be64f70077a8ccb6834e1e20c85eab5bfe299a"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/mixed_shot_read_input.mat",
+    "size": 432619,
+    "sha256": "895a11b8d07ead7519ef28920ba7c660ae5ba3d8e38bd61aefa2215458fe4c73"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/provenance.json",
+    "size": 2978,
+    "sha256": "a7a10fe66e3c3043fc42466699ff2754350c987b675b31d81fc519a045d61efd"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/reference_measurements.mat",
+    "size": 995725,
+    "sha256": "6f4711425573571040c809a0b65a3c9ed30cb69acee33a5412e3ee53ec895050"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/status.json",
+    "size": 136,
+    "sha256": "1ea85f1328039ed31c1bd2a71ea2183f2ca50859c8195c43281dd8b89e62d7a3"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/summary.mat",
+    "size": 4658,
+    "sha256": "0b3e5dfa31e045b332b4e23116bec81e089b53f7cc4f907209603455f360dd9f"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_01/tests.json",
+    "size": 483,
+    "sha256": "7402c15a031e6938cde4812ee085230b2615940c2d4c500cefb24e4fe4745028"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/MCF_model.png",
+    "size": 165915,
+    "sha256": "fff68467c2ad2426ec87b770f88b9734023d11a9abb973fe2d7cd4afb161f395"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/REPORT.md",
+    "size": 2898,
+    "sha256": "abf12aa474d6039e0546c6dda4cdc3c3ccd45d4ae35e8a5b2c7c97bf71521970"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/config.json",
+    "size": 2175,
+    "sha256": "9e80ed9cd2560482f05a592517f46eb0b009f9800a834cacb15023bf8dba42ea"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/data_manifest.json",
+    "size": 428,
+    "sha256": "1e7a30f25efc48c94fc96edb0d63ef059e65bede019c5bd08ed0bddb299125ca"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/generation_audit.json",
+    "size": 488,
+    "sha256": "b88d21c846a598d50deb5d3cbfe7c7dc6f5fe30ba24ffbd5646174136a69bf9e"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/generation_audit_partial.mat",
+    "size": 523,
+    "sha256": "0020bc8268c46852001d47c2a8b27bfcb9ed107277cda8b49a6bd7942182d4f1"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/matlab.log",
+    "size": 175,
+    "sha256": "3269eff0f5a8acb92a56c408fb256f417313590278949b413b68a7b25e1df8a9"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/metrics.csv",
+    "size": 2866,
+    "sha256": "11d8710f3ae17825eb41895526c36c5d2e90ce45422dc3e81dec4d1e55c95c74"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/metrics.json",
+    "size": 10065,
+    "sha256": "4aed9d3fa95a7ce5d97b531722b305b419cc8c5faaa8878391763a2fd09de45c"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/ER_iter010.mat",
+    "size": 392541,
+    "sha256": "7bdf2cb71bb7b5f653ecd3ab8996626925b612a3bf7129f2cd4ec2591030a6e9"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/ER_iter020.mat",
+    "size": 392620,
+    "sha256": "e6b0b717ebf62f093317f01da65b1c183702dd077e2b2c12829dba36ea62bc04"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/ER_iter030.mat",
+    "size": 392331,
+    "sha256": "9f1570aed8e4a102a64d8a555a80c5ca43b97baf1e2714b7cb504cd2e21b8719"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/ER_iter040.mat",
+    "size": 392558,
+    "sha256": "dbaf60f2b8a73d2319261cf1db6e8fe74da38d1b0870c59fdbc338f8823e118f"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/ER_receipts.json",
+    "size": 857,
+    "sha256": "64352f5b3981f7a942dc07eccf391bbdeb4a97e43f5411351c90eee6ef3bf5f0"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/HIO_iter010.mat",
+    "size": 1212828,
+    "sha256": "2bf03bf7b4603404e6676b30c73f053fe9b9d97954184c224767b45917bcbe23"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/HIO_iter020.mat",
+    "size": 1212957,
+    "sha256": "f4a666db70f19f8c634aff6eff03540dc82b3923968e3d0af9423a19efa5c4b8"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/HIO_iter030.mat",
+    "size": 1213059,
+    "sha256": "f68a988743d295fe3fa6ce63a0a6ab73952d0d06130500a8acb0b8b1e7e77405"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/HIO_iter040.mat",
+    "size": 1212885,
+    "sha256": "1aa50ab9000adb8d60d976e39846bcbec539eed154346ce1b11fa2a879829d8a"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/HIO_receipts.json",
+    "size": 850,
+    "sha256": "ba99bbf78c2f171c5a130aba60fb4947661fb89c32cf5c4abc4c6119dfc8254e"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/field_comparison.png",
+    "size": 164361,
+    "sha256": "5d9f577fe4bf92e5324d697de5ba466cc68aac06f2f46d85af3072a7a4f323c9"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean/metric_curves.png",
+    "size": 59485,
+    "sha256": "94610ff93020f13e599b9137d23abca42d96aa13e24de42b9c4bfab91a95a141"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_clean_input.mat",
+    "size": 611958,
+    "sha256": "d23fb8a03eeb46f3e8d995f21cedd903fa39ddefbba68805bed0a99171d0de1e"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/ER_iter010.mat",
+    "size": 395376,
+    "sha256": "e8a34d53f5a08a34cd2535050edda3281ef58f48205e834cff2d20b0754d9256"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/ER_iter020.mat",
+    "size": 395313,
+    "sha256": "cb50a0a7f5151724ee2616977a9ec61079894b7b20fd5461e825786c7872998d"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/ER_iter030.mat",
+    "size": 394861,
+    "sha256": "23fc6297b843a67fbd8a06d4cfab95c4dd92304c747d14f8179f7a497b193964"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/ER_iter040.mat",
+    "size": 394898,
+    "sha256": "f341b5870abb107e95138f039392a757a71ab8b9fec3dd94191165ae1ee784bc"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/ER_receipts.json",
+    "size": 873,
+    "sha256": "c5126dc831b1cdf7f409c1729e242342db322a72a493ab978c13002074434cb2"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/HIO_iter010.mat",
+    "size": 1213992,
+    "sha256": "c9e65527befe76a38dfecfed62d8a1a06061304cf572f5689ed635d096b8aa83"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/HIO_iter020.mat",
+    "size": 1213378,
+    "sha256": "d1814f55899211f16d5e1c7e2e23fabd337de67acb2255f9adf208bff9c461cb"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/HIO_iter030.mat",
+    "size": 1213310,
+    "sha256": "6c8a166de0ea2dad14ae236f77ac941fb390b37dd4317216b1448aa288eaf513"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/HIO_iter040.mat",
+    "size": 1213241,
+    "sha256": "a7e22183fe40a4074a6a3a894d5ad55e325735791f675d4ef2baf11902f29628"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/HIO_receipts.json",
+    "size": 878,
+    "sha256": "eb36a199ae5236ce045c156d93b57ccf2d2132314f55cdc00a036e156f54f582"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/field_comparison.png",
+    "size": 179744,
+    "sha256": "d29c808c4c86b094a279a102c9ff2f1363beacae456467a58857534fe275f4f7"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read/metric_curves.png",
+    "size": 45863,
+    "sha256": "1009d6a8328922d1b5a9fc09641b2722f0c8663a9df527b483d98787d009e7cc"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/mixed_shot_read_input.mat",
+    "size": 441583,
+    "sha256": "08c2afe92760042ee8b95b5cd71d9c832b42839b7b5815f2bf225a50e5ea33f2"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/provenance.json",
+    "size": 2978,
+    "sha256": "a7a10fe66e3c3043fc42466699ff2754350c987b675b31d81fc519a045d61efd"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/reference_measurements.mat",
+    "size": 995760,
+    "sha256": "ad0de0b2e19bbfa34ddb6a7b97336f991055d76bd615013a4a0d814a15ef6298"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/status.json",
+    "size": 135,
+    "sha256": "570d5c5f2b7707c29860fdaeb1f43fa061b74f8e3e9bccc639fd33ed2ea91e4d"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/summary.mat",
+    "size": 4649,
+    "sha256": "756a446c1a8fa62cee4566004785a3a9088db0deffbbf6aa0da5296706346940"
+  },
+  {
+    "path": "runs/pilot/mcf_20261003_224006_279_02/tests.json",
+    "size": 483,
+    "sha256": "7402c15a031e6938cde4812ee085230b2615940c2d4c500cefb24e4fe4745028"
+  }
+]
