@@ -1,0 +1,31 @@
+{
+  "sources_sha256": {
+    "runs/pilot/four_20261003_224047_034/periodic_clean/HIO_result.mat": "8db9ab22a9d262502a1c9071dd4c8576614c5c42c045f4c3cc04979b55177bdd",
+    "runs/pilot/four_20261003_224047_034/periodic_clean/ER_result.mat": "5b2df7b0b623af4f6e56485e14ef406ed55a7423cbff6ec566fc38c339293034",
+    "runs/pilot/four_20261003_224047_034/periodic_clean/RAAR_result.mat": "19ab6142aa03d5a7ee698060d9a3b448fe13ead99d8a0278902a1617e470b9e4",
+    "runs/pilot/four_20261003_224047_034/periodic_clean/LBFGS_result.mat": "7fbffb1745d0efb7b5a137f6573b54ff7807dbf2cc0a310098e75c7ae1a8e72f",
+    "runs/pilot/four_20261003_224047_034/periodic_shot_read/HIO_result.mat": "795dfa10f42019e5cb5dc6a07e32cfe490571153d5cb9848cecbc7b15901a6c3",
+    "runs/pilot/four_20261003_224047_034/periodic_shot_read/ER_result.mat": "d2194b46e4384a0875107eea99f56d2f2d0ff1639e4ae85acce2c35fedbf4beb",
+    "runs/pilot/four_20261003_224047_034/periodic_shot_read/RAAR_result.mat": "da6d948fbd96d9c5436391dce1fc75bea972af81d4df141711c6d8dc78a7acd3",
+    "runs/pilot/four_20261003_224047_034/periodic_shot_read/LBFGS_result.mat": "81035c060e5090ffac016b1196800fcacd89df2a4e5314e7364711d85278516c",
+    "runs/pilot/four_20261003_224047_034/aperiodic_clean/HIO_result.mat": "1a43e052b2fe82939298d753c9a75385dbb5255340e3c87cada27d124ee97dff",
+    "runs/pilot/four_20261003_224047_034/aperiodic_clean/ER_result.mat": "bad981c5cb3c5438003069eedd34915d014475fc66af07a1aa2fc9ba81736087",
+    "runs/pilot/four_20261003_224047_034/aperiodic_clean/RAAR_result.mat": "1ec97fcf5cf41d86a2efed46601ebcf9e7fee3c28cd4d889e0e8dd58f5afaf88",
+    "runs/pilot/four_20261003_224047_034/aperiodic_clean/LBFGS_result.mat": "02b0f508f7347654ae37f70f32ff99075017a3166c19c68e004a0da626242c83",
+    "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/HIO_result.mat": "040fda4ab6b139658f58f5e68d10b1427011602a45c2699664eaaccac552ed91",
+    "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/ER_result.mat": "494a4305b9264094a5170cab06e369e51564b0f8613d46e071072d6c4456f540",
+    "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/RAAR_result.mat": "861df482a1ccec4de23e3683b3d8da0e2790dbfb887b895bf43da5d0e96b72e1",
+    "runs/pilot/four_20261003_224047_034/aperiodic_shot_read/LBFGS_result.mat": "fd7bd1262b5c8ae2c20ecabbf6d1542b231c2a477e7ebd4c818bb9210c258fea"
+  },
+  "field_nrmse_checks": 16,
+  "shared_amplitude_max": 2.461219466171902,
+  "display_extent_um": [
+    -32,
+    32
+  ],
+  "raw_detector_shape": [
+    256,
+    256
+  ],
+  "interpolation": "nearest"
+}

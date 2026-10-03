@@ -1,0 +1,20 @@
+[
+  {
+    "layout": "periodic",
+    "expected_sample_electrons": 84114.11525461532,
+    "mean_sample_electrons": 1.2834795418489886,
+    "peak_sample_electrons": 68.84935674127105,
+    "negative_readout_fraction": 0.3918914794921875,
+    "seed": 3102027,
+    "exposure": 50.00000010472352
+  },
+  {
+    "layout": "aperiodic",
+    "expected_sample_electrons": 82522.66871472745,
+    "mean_sample_electrons": 1.2591959947925941,
+    "peak_sample_electrons": 92.0301598825629,
+    "negative_readout_fraction": 0.3889923095703125,
+    "seed": 3102027,
+    "exposure": 50.00000010764919
+  }
+]

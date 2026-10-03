@@ -1,0 +1,10 @@
+{
+  "compiler": "Tectonic 0.17.0 (XeTeX/LaTeX engine)",
+  "pages": 12,
+  "formula_equations": 11,
+  "compilation_warnings": 0,
+  "summary_metric_checks": 20,
+  "camera_statistic_checks": 6,
+  "review": "All pages contact sheet; mathematical pages at full resolution.",
+  "fresh_extraction_compile": "passed with cached TeX resources; 12 pages and extracted text identical"
+}
