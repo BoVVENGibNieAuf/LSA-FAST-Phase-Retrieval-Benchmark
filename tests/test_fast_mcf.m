@@ -34,9 +34,22 @@ counts=shot(:).^2*20;
 result.poisson_mean=mean(counts); result.poisson_variance=var(counts);
 [shot2,~]=fast_mcf_camera(ones(128),20,0,42);
 result.camera_repeat=isequal(shot,shot2);
+% Exercise the actual checkpoint writer and partial-run recovery path.
+scratch=tempname; mkdir(scratch); cleanup=onCleanup(@()rmdir(scratch,'s')); %#ok<NASGU>
+partial=fullfile(scratch,'partial'); fresh=fullfile(scratch,'fresh'); mkdir(partial); mkdir(fresh);
+d=struct('calibration',a,'mask',double(abs(a)>0.7),'amplitude',abs(P(a)));
+c=cfg; c.iterations=1; c.checkpoints=1;
+r1=fast_mcf_solve_case(d,H,c,'HIO',partial,scratch,tic,'regression');
+c.iterations=2; c.checkpoints=[1 2];
+r2=fast_mcf_solve_case(d,H,c,'HIO',partial,scratch,tic,'regression');
+r3=fast_mcf_solve_case(d,H,c,'HIO',fresh,scratch,tic,'regression');
+u2=load(r2(end).path,'internal_state'); u3=load(r3(end).path,'internal_state');
+result.checkpoint_resume_error=norm(u2.internal_state-u3.internal_state,'fro');
+result.checkpoint_schema=numel(r1)==1 && numel(r2)==2 && numel(r3)==2 && ...
+ r2(1).reused && ~r2(2).reused && ~r1(1).reused;
 checks=[result.round_trip result.adjoint result.plane_wave result.fourier_mode ...
  result.pixel_average result.intensity_integration result.fixed_coefficients ...
- result.coefficient_linearity result.blank_correction];
-result.passed=all(checks<1e-9) && result.geometry_repeat && result.camera_repeat && ...
+ result.coefficient_linearity result.blank_correction result.checkpoint_resume_error];
+result.passed=all(checks<1e-9) && result.geometry_repeat && result.camera_repeat && result.checkpoint_schema && ...
  abs(result.poisson_mean-20)<0.4 && abs(result.poisson_variance-20)<1.2;
 end

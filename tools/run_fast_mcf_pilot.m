@@ -1,4 +1,4 @@
-function run_fast_mcf_pilot
+function run_fast_mcf_pilot(resume_id)
 % Literature-informed known-truth core-resolved pilot; frozen old runs retained.
 root=fileparts(fileparts(mfilename('fullpath')));
 oldpath=path; pathGuard=onCleanup(@()path(oldpath)); %#ok<NASGU>
@@ -8,9 +8,23 @@ pilot=fullfile(root,'runs','pilot'); if ~isfolder(pilot), mkdir(pilot); end
 lockpath=fullfile(pilot,'FAIR_COMPARE.lock'); lock=java.io.File(lockpath);
 assert(lock.mkdir(),'FAST:Locked','Pilot lock exists; inspect active work before removing.');
 lockGuard=onCleanup(@()rmdir(lockpath)); %#ok<NASGU>
-cfg=fast_mcf_config; cfg.run_id=['mcf_' char(datetime('now','Format','yyyyMMdd_HHmmss_SSS'))];
-out=fullfile(pilot,cfg.run_id); mkdir(out);
-truthdir=fullfile(root,'evaluation_only',cfg.run_id); mkdir(truthdir);
+resuming=nargin>0 && ~isempty(resume_id);
+if resuming
+ assert(~isempty(regexp(resume_id,'^mcf_[0-9_]+$','once')),'FAST:ResumeID','Invalid run ID');
+ out=fullfile(pilot,resume_id); cfg=jsondecode(fileread(fullfile(out,'config.json')));
+ status=jsondecode(fileread(fullfile(out,'status.json')));
+ assert(strcmp(status.state,'failed'),'FAST:ResumeState','Resume requires a stopped failed run');
+ truthdir=fullfile(root,'evaluation_only',cfg.run_id);
+ validate_resume(root,out,truthdir,cfg);
+ recovery=fullfile(out,['recovery_' char(datetime('now','Format','yyyyMMdd_HHmmss_SSS'))]); mkdir(recovery);
+ for name={'failure.json','status.json','provenance.json','tests.json','data_manifest.json'}
+  source=fullfile(out,name{1}); if isfile(source), copyfile(source,fullfile(recovery,name{1})); end
+ end
+else
+ cfg=fast_mcf_config; cfg.run_id=['mcf_' char(datetime('now','Format','yyyyMMdd_HHmmss_SSS'))];
+ out=fullfile(pilot,cfg.run_id); mkdir(out);
+ truthdir=fullfile(root,'evaluation_only',cfg.run_id); mkdir(truthdir);
+end
 diary(fullfile(out,'matlab.log')); diaryGuard=onCleanup(@()diary('off')); %#ok<NASGU>
 tAll=tic;
 try
@@ -21,7 +35,7 @@ try
  provenance=struct('matlab_version',version,'computer',computer,'sources',struct([]));
  sources={'tools/run_fast_mcf_pilot.m','tests/test_fast_mcf.m', ...
   'src/solvers/fast_project_amplitude.m','src/solvers/fast_support_step.m', ...
-  'src/metrics/fast_field_error.m'};
+  'src/metrics/fast_field_error.m','src/solvers/fast_mcf_solve_case.m'};
  files=dir(fullfile(root,'src','simulation','fast_mcf_*.m'));
  for j=1:numel(files), sources{end+1}=['src/simulation/' files(j).name]; end %#ok<AGROW>
  for j=1:numel(sources)
@@ -31,7 +45,14 @@ try
  if gitStatus==0, provenance.git_commit=strtrim(gitCommit); else, provenance.git_commit='unavailable; source hashes authoritative'; end
  writejson(fullfile(out,'provenance.json'),provenance);
  writejson(fullfile(out,'status.json'),struct('state','running','stage','data_generation'));
- audit=fast_mcf_generate(out,truthdir,cfg); writejson(fullfile(out,'generation_audit.json'),audit);
+ if resuming
+  audit=jsondecode(fileread(fullfile(out,'generation_audit.json')));
+  writejson(fullfile(recovery,'resume.json'),struct('run_id',cfg.run_id, ...
+   'generation_reused',true,'previous_elapsed_seconds',status.elapsed_seconds, ...
+   'wall_budget_scope','600 seconds per invocation; previous attempt archived'));
+ else
+  audit=fast_mcf_generate(out,truthdir,cfg); writejson(fullfile(out,'generation_audit.json'),audit);
+ end
  H=fast_mcf_transfer(cfg.n,cfg.dx,cfg.lambda,cfg.z);
  records=struct([]); manifest=struct([]); count=0;
  for s=1:numel(cfg.scenes)
@@ -52,7 +73,8 @@ try
    for m=1:numel(cfg.methods)
     method=cfg.methods{m};
     % Solver function receives measurements/calibration only.
-    receipts=solve_case(d,H,cfg,method,caseDir,out,tAll,name);
+    receipts=fast_mcf_solve_case(d,H,cfg,method,caseDir,out,tAll,name);
+    writejson(fullfile(caseDir,[method '_receipts.json']),receipts);
     for k=1:numel(receipts)
      receipt=receipts(k); u=load(receipt.path,'internal_state');
      row=score(u.internal_state,d,truthPath,H,scene,condition,method, ...
@@ -77,24 +99,6 @@ catch err
   'report',getReport(err,'extended','hyperlinks','off')));
  writejson(fullfile(out,'status.json'),struct('state','failed','elapsed_seconds',toc(tAll)));
  rethrow(err);
-end
-end
-function receipts=solve_case(d,H,cfg,method,caseDir,out,tAll,name)
-u=d.calibration.*d.mask; seconds=0; receipts=struct([]); k=0;
-for it=1:cfg.iterations
- assert(toc(tAll)<cfg.max_wall_seconds,'FAST:TimeCap','MCF pilot wall-clock soft cap reached');
- timer=tic; detector=ifft2(fft2(u).*H);
- v=ifft2(fft2(fast_project_amplitude(detector,d.amplitude)).*conj(H));
- u=fast_support_step(u,v,d.mask,method,cfg.beta); seconds=seconds+toc(timer);
- assert(all(isfinite(u(:))),'FAST:Nonfinite','Nonfinite MCF solver state');
- if ismember(it,cfg.checkpoints)
-  k=k+1; internal_state=u; physical_output=d.mask.*u; completed_iteration=it; %#ok<NASGU>
-  p=fullfile(caseDir,sprintf('%s_iter%03d.mat',method,it));
-  save(p,'internal_state','physical_output','completed_iteration','seconds');
-  receipts(k)=struct('path',p,'iteration',it,'seconds',seconds); %#ok<AGROW>
-  writejson(fullfile(out,'status.json'),struct('state','running','case',name, ...
-   'method',method,'completed_iterations',it,'elapsed_seconds',toc(tAll)));
- end
 end
 end
 function row=score(u,d,truthPath,H,scene,condition,method,it,seconds,calls)
@@ -171,4 +175,29 @@ f=fopen(p,'rb'); assert(f>=0); guard=onCleanup(@()fclose(f)); %#ok<NASGU>
 d=java.security.MessageDigest.getInstance('SHA-256');
 while ~feof(f), b=fread(f,1048576,'*uint8'); d.update(typecast(b,'int8')); end
 h=lower(reshape(dec2hex(typecast(d.digest(),'uint8'),2).',1,[]));
+end
+
+function validate_resume(root,out,truthdir,cfg)
+% Ensure preserved numerical sources and recorded inputs still match the run.
+p=jsondecode(fileread(fullfile(out,'provenance.json')));
+repairable={'tools/run_fast_mcf_pilot.m','tests/test_fast_mcf.m'};
+for j=1:numel(p.sources)
+ if ~ismember(p.sources(j).path,repairable)
+  assert(strcmp(sha256(fullfile(root,p.sources(j).path)),p.sources(j).sha256), ...
+   'FAST:ResumeSource','Numerical source changed: %s',p.sources(j).path);
+ end
+end
+m=jsondecode(fileread(fullfile(out,'data_manifest.json')));
+for j=1:numel(m)
+ parts=strsplit(m(j).case,'_');
+ assert(strcmp(sha256(fullfile(out,[m(j).case '_input.mat'])),m(j).input_sha256));
+ assert(strcmp(sha256(fullfile(truthdir,[parts{1} '_truth.mat'])),m(j).truth_sha256));
+end
+for s=1:numel(cfg.scenes)
+ assert(isfile(fullfile(truthdir,[cfg.scenes{s} '_truth.mat'])));
+ for c=1:numel(cfg.conditions)
+  assert(isfile(fullfile(out,[cfg.scenes{s} '_' cfg.conditions{c} '_input.mat'])));
+ end
+end
+assert(isfile(fullfile(out,'generation_audit.json')));
 end
