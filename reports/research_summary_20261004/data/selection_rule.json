@@ -1,9 +1,5 @@
 {
-  "rule": "Minimize the three-seed mean field NRMSE over all saved budgets 0:2:200 separately for each layout/p/method, then report all seeds at that same selected budget; not mean of per-seed minima.",
-  "selection": "Retrospective truth-guided diagnostic, not deployable stopping criterion.",
-  "all_selected_budgets": [
-    2,
-    4,
-    6
-  ]
+  "rule": "Independently minimize field NRMSE of each method and seed over its entire saved trajectory. Report the actual accepted iteration and value at that minimum. Ties: first iteration, then first propagation. No averaging before selection.",
+  "scope": "Retrospective truth-based best within the recorded run, not an automatic stopping rule or a proof of global optimality.",
+  "legacy": "early_minima.csv preserves the previous mean-curve selection; superseded for the main report by per_run_best.csv."
 }

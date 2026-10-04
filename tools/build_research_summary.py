@@ -60,9 +60,8 @@ print('Retrospective minima:',[(q['layout'],q['p_blank'],q['method'],q['budget']
 clean_tex=[]
 for q in clean:
  clean_tex.append(f"{'周期' if q['layout']=='periodic' else '非周期'} & {q['method']} & {float(q['field80']):.4f} & {float(q['phase80']):.4f} & {float(q['field200']):.4f}\\\\")
-noise_tex=[]
-for q in selected:
- noise_tex.append(f"{'周期' if q['layout']=='periodic' else '非周期'} & {q['p_blank']} & {q['method']} & {q['budget']} & {q['iteration_min']} & ${q['field_mean']:.4f}\\pm{q['field_sd']:.4f}$ & ${q['phase_at_field_min_mean']:.4f}\\pm{q['phase_at_field_min_sd']:.4f}$\\\\")
+import runpy
+noise_tex=runpy.run_path(str(R/'tools/build_best_iteration.py'))['table_rows']
 tex=(R/'tools/research_summary_template.tex').read_text().replace('CLEAN_TABLE','\n'.join(clean_tex)).replace('NOISE_TABLE','\n'.join(noise_tex));(D/'main.tex').write_text(tex)
 for f in ['build.sh','build.cmd']:shutil.copy2(R/'reports/latex_delivery_20261004'/f,D/f)
-(D/'README.md').write_text('# 六节研究进展报告\n\n顺序：简报、原文章复现结果、测试数据生成和噪声模型、无噪声对比、有噪声对比、小结。\n\nmain.tex 用XeLaTeX编译两次，或运行tectonic。figures与data为本报告使用的实际结果。\n\n早期最低误差按三种子均值曲线回顾性选点；不是已验证自动停止规则。原始完整曲线及选点定义见data，完整含噪曲线见figures/noise_full_history.pdf。\n\n源码、原始数据、历史MAT恢复与7篇引用见报告第6节。主项目运行和绘图入口见仓库README。\n')
+(D/'README.md').write_text('# 六节研究进展报告\n\n顺序：简报、原文章复现结果、测试数据生成和噪声模型、无噪声对比、有噪声对比、小结。\n\nmain.tex 用XeLaTeX编译两次，或运行tectonic。figures与data为本报告使用的实际结果。\n\n最佳iteration与最低误差按每种方法、每次运行分别回顾性选点；不是已验证自动停止规则。原始完整曲线及选点定义见data，完整含噪曲线见figures/noise_full_history.pdf。\n\n源码、原始数据、历史MAT恢复与7篇引用见报告第6节。主项目运行和绘图入口见仓库README。\n')

@@ -76,24 +76,26 @@ CLEAN_TABLE
 端面生成真值、原始输入、两处保存复场与指标均保留；查看与重画入口见第6节。无噪声与后续含噪声结果沿用相同评分定义。
 \clearpage\begin{landscape}\thispagestyle{empty}
 \section{有噪声情况对比}
-\textbf{先看早期恢复过程。} 两类布局、两个计数水平、三个随机种子、四种方法，共48次求解。图中放大前20次传播，显示误差下降与开始回升的区域。
-\begin{center}\includegraphics[width=242mm,height=135mm,keepaspectratio]{figures/noise_early.pdf}\end{center}
-{\small 实线：三种子均值；阴影：最小--最大范围；圆点：每2次传播保存的真实评价点。星号为\textbf{整条已保存均值曲线的回顾性最低点}，均落在2--6次传播内。首个有效更新处多条曲线／星号重合。完整0--200次曲线另存\path{figures/noise_full_history.pdf}，逐步数据包含实际接受迭代数。}
+\textbf{恢复过程与最佳点。} 两类布局、两个计数水平、三个随机种子、四种方法，共48次求解。图中展示各次运行的完整误差轨迹，横轴为实际接受的迭代次数。
+\begin{center}\includegraphics[width=242mm,height=135mm,keepaspectratio]{figures/noise_iterations.pdf}\end{center}
+{\small 同一颜色表示同一种方法的三次独立运行；星号标出\textbf{各次运行自己的最低复场NRMSE及对应iteration}。重合曲线与星号可能相互覆盖。所有已保存迭代均纳入比较，没有截取前20次传播。不同方法每次迭代开销不同，传播次数记录在数据文件；L-BFGS的迭代数仅计接受更新。}
 \end{landscape}
 \clearpage
-\subsection*{有噪声对比（续）：早期达到的恢复效果}
-对每个“布局--计数--方法”，在已保存的0:2:200次传播点中找到\textbf{三个种子平均复场NRMSE最低的共同检查点}，再报告该点的均值与样本标准差。各方法对应计算量分别列出，不把不同预算的结果描述为等预算排名；上页曲线支持同预算阅读。
-\begin{center}\small\begin{tabular}{ll l rr rr}\toprule
-布局 & $p$ & 方法 & 传播 & 迭代 & 复场NRMSE & 同点相位RMSE/rad\\\midrule
+\subsection*{有噪声对比（续）：各方法的最佳iteration与最佳值}
+对每种方法的每次独立运行，在\textbf{该次运行的完整已保存轨迹}中寻找最低复场NRMSE，列出对应的最佳iteration。三个种子分别选点、分别展示，不先求平均曲线。
+\begin{center}\small\begin{tabular}{ll l rrr}\toprule
+布局 & $p$ & 方法 & 种子41001 & 种子41002 & 种子41003\\
+ & & & iteration / 最低值 & iteration / 最低值 & iteration / 最低值\\\midrule
 NOISE_TABLE
 \bottomrule\end{tabular}\end{center}
-\textbf{主结果：}
+每个单元格为“最佳iteration / 最低复场NRMSE”，数值越低越好。最佳iteration按实际接受的更新计数；如最低值重复出现，取首次达到的位置。不同方法的最佳值可以出现在不同iteration。
+\par\textbf{主结果：}
 \begin{itemize}
-\item $p=1$时，四方法首次有效更新达到的复场误差几乎相同：周期约0.3283、非周期约0.3326，均明显低于共同初值的0.6555／0.6739。不能据早期最低误差给四方法排出明显优劣。
-\item $p=10$时，ER与L-BFGS的早期最低均值接近；ER约0.2198／0.2194，L-BFGS约0.2203／0.2207。3次重复不足以支持微小差异的显著性结论。
+\item $p=1$时，四方法在每个种子下均于第1次有效更新达到本次运行的最佳值；同一种子的四方法最佳值几乎相同，均优于共同初值。具体数值逐次列于表中。
+\item $p=10$时，HIO在iteration 2、ER在iteration 3、RAAR在iteration 1、L-BFGS在iteration 2达到各自最佳值。ER与L-BFGS的最佳NRMSE都约为0.22，三次重复不足以支持微小差异的显著性结论。
 \item HIO、ER、RAAR首次支持域内投影相同，当前L-BFGS设置的首次有效更新也给出极接近的结果，因此低计数下早期效果重合。后续算法差异更多体现在误差随继续迭代的变化。
 \end{itemize}
-\textbf{停止规则边界：} 这些检查点由评价真值回顾性确定，展示本次运行曾达到的恢复效果；它们不是已经建立的自动早停规则。相位误差在复场最低点读取，并非另取相位最小值。3次标准差描述观测波动，不计入选点偏差。
+\textbf{“最佳”的含义：} 这里是使用已知真值，从本次已保存运行中回顾性找到的最佳值与iteration，不是预先确定的自动停止规则，也不代表所有可能参数下的全局最佳。逐次原始值、对应传播开销及相位误差见\path{data/per_run_best.csv}。
 \clearpage
 \section{小结}
 \begin{enumerate}
@@ -110,7 +112,7 @@ NOISE_TABLE
 \item \textbf{原文复现：}\path{runs/pilot/author_20260927_225947/}含图、指标及执行记录；冻结作者代码\path{legacy_fast/}，公开输入来源\href{https://github.com/Jiawei-sn/FAST}{Jiawei-sn/FAST}。项目历史大文件草稿Release尚未公开，不能把它当作公开下载入口。
 \item \textbf{无噪声与生成数据：}\path{runs/pilot/four_20261003_224047_034/}及\path{mcf_20261003_224006_279_01/02}两生成运行（均位于\path{runs/pilot/}）；真值对应\path{evaluation_only/}。完整历史MAT恢复按\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/blob/main/CIRCULAR_RESTORE_zh.md}{圆形结果恢复说明}和公开圆形结果Release操作。
 \item \textbf{含噪原始结果：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/tree/main/runs/pilot/poisson_stage_20261004}{Poisson原始结果目录}，含输入、最终复场、曲线、参数与完成回执。早期保存的是评价曲线，未保存每一步复场；报告不展示不存在的早期重建图像。
-\item \textbf{绘图与选点数据：}本报告\path{data/curves.csv}、\path{early_minima.csv}、\path{selection_rule.json}、\path{clean_comparison.csv}；可直接追溯图表数值。
+\item \textbf{绘图与选点数据：}本报告\path{data/curves.csv}、\path{per_run_best.csv}、\path{selection_rule.json}、\path{clean_comparison.csv}；可直接追溯图表数值。
 \end{itemize}
 \endgroup
 \clearpage
