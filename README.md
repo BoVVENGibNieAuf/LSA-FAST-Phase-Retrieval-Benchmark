@@ -1,4 +1,15 @@
-## Latest: Poisson stage (2026-10-04)
+## 当前完整阶段报告（六节版，2026-10-04）
+
+[阅读PDF](reports/research_summary_20261004/MCF_Research_Progress.pdf) · [可编辑LaTeX工程](reports/research_summary_20261004/MCF_Research_LaTeX.zip) · [报告源文件和绘图数据](reports/research_summary_20261004/)
+
+按“简报 → 原文章复现 → 数据生成与噪声 → 无噪声比较 → 有噪声比较 → 小结”组织。含噪主结果为早期恢复效果与真实曲线；回顾性最低误差明确使用评价真值选点，不能当作已验证早停规则。此前以最终预算为主的报告保留为历史版本。
+
+- 重建源码：`src/`；运行入口：`START_POISSON_STAGE.cmd`。
+- 本轮原始数据：`runs/pilot/poisson_stage_20261004/`；无噪声/真值恢复见 `CIRCULAR_RESTORE_zh.md`。
+- 绘图与报告脚本：`tools/build_research_summary.py`；报告模板：`tools/research_summary_template.tex`。
+- 报告第6节含资料索引与7篇参考文献。
+
+## 历史噪声阶段报告（2026-10-04）
 
 48/48 MATLAB solves completed (34.99 s), 4,848 curve rows and 96 independently verified final metrics. ER has the lowest final field error in all four noisy conditions. All 48 runs have higher field error at 200 than at 80 propagation calls. Three seeds per condition; fixed parameters and ideal known calibration.
 

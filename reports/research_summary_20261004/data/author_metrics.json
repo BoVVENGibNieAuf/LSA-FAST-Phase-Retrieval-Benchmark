@@ -1,0 +1,19 @@
+{
+  "calibration_iterations": 2500,
+  "sample_iterations": 40,
+  "author_display_sample_iteration": 39,
+  "algorithm_propagations": 10080,
+  "calibration_seconds": 1127.7813938,
+  "mask_fraction": 0.33771016438802082,
+  "facet_amplitude_correlation": 0.940396725106921,
+  "reference_amplitude_nrmse_a": 0.28157288588820867,
+  "reference_amplitude_nrmse_b": 0.26620926518026394,
+  "sample_amplitude_nrmse39": 0.2946668002933972,
+  "sample_amplitude_nrmse40": 0.2966705863595766,
+  "sample_outside_energy_fraction40": 0.067125104582503439,
+  "phase_change39_to40_rms_in_mask_rad": 0.10148859502040433,
+  "independent_phase_ground_truth_available": false,
+  "extra_validation_propagations": 4,
+  "total_seconds": 1170.1164758,
+  "stop_reason": "author_fixed_iteration_counts_completed"
+}

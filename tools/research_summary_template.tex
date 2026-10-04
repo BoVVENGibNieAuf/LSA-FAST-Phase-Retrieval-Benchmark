@@ -1,0 +1,127 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=18mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,hyperref,pdflscape,fancyhdr,enumitem}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{多芯光纤相位恢复：阶段研究进展}\fancyhead[R]{2026-10-04}\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlist{itemsep=3pt,topsep=3pt}
+\begin{document}
+\begin{center}{\LARGE\bfseries 多芯光纤相位恢复：阶段研究进展}\par\vspace{5pt}阶段汇报\quad |\quad 呈佳伟老师\end{center}
+\section{简报：这段时间做了什么}
+佳伟老师：这段时间围绕“多芯光纤相位恢复中，不同方法的恢复精度与噪声稳定性”开展工作，已从作者公开示例复现推进到统一条件下的仿真对照。
+\begin{enumerate}
+\item \textbf{跑通作者公开示例。} 完成 FAST 参考校准与样品重建，建立后续比较的基础流程。
+\item \textbf{建立已知真值的 MCF 仿真。} 构建圆形端面，比较周期与非周期纤芯布局，使恢复误差能够直接量化。
+\item \textbf{完成四种方法的统一比较。} 实现 HIO、ER、RAAR 与 L-BFGS，在共同输入、初值和传播开销下进行对照。
+\item \textbf{补充噪声依据与迭代分析。} 根据成像文献设置探测域 Poisson 噪声，完成多种子重复，观察恢复质量在迭代过程中的变化。
+\end{enumerate}
+\subsection*{当前主要认识}
+无噪声的已保存检查点中，RAAR 的复场误差最低。含噪条件下，各方法在很早期已经获得较好的恢复；在低计数条件下，首次有效更新的效果几乎相同，在较高计数条件下，ER 与 L-BFGS 的早期最佳效果接近。方法之间还存在对迭代继续推进的稳定性差异。
+
+本报告将\textbf{早期恢复效果}作为含噪部分的主比较，结合曲线观察后续变化。回顾性最低误差用于理解各方法已达到的效果，下一步仍需建立不依赖真值的停止依据。
+\subsection*{阅读与材料入口}
+正文依次为：原文章复现结果、测试数据生成与噪声模型、无噪声对比、有噪声对比、小结。第6节集中列出源码、数据、可编辑报告与参考文献。
+
+\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark}{公开项目仓库：LSA-FAST-Phase-Retrieval-Benchmark}。最新报告及下载入口见首页 README。
+\clearpage
+\section{原文章复现结果}
+复现对象为 FAST 原文\cite{fast}作者公开的相位目标示例，采用其参考校准与样品恢复流程。参考校准2500次、样品更新40次；冻结作者传播和更新代码，保留原显示流程。
+\begin{center}\begin{tabular}{lr}\toprule
+检查项 & 实际运行结果\\\midrule
+参考端面振幅相关系数 & 0.9404\\
+参考检测面 A / B 幅值 NRMSE & 0.2816 / 0.2662\\
+样品第39 / 40次探测面幅值 NRMSE & 0.2947 / 0.2967\\\bottomrule
+\end{tabular}\end{center}
+上述指标衡量预测与实测幅值的一致性。公开示例没有独立相位真值，因此这里报告\textbf{流程复现与数据一致性}；相位恢复准确度在后续已知真值仿真中评价。
+\begin{center}
+\includegraphics[width=.48\linewidth,height=67mm,keepaspectratio]{figures/08_author_display39.png}\hfill
+\includegraphics[width=.48\linewidth,height=67mm,keepaspectratio]{figures/09_final_iteration40_display.png}\\
+{\small 左：作者第39次显示流程；右：第40次同样显示处理。}\\[4pt]
+\includegraphics[width=.80\linewidth,height=68mm,keepaspectratio]{figures/10_calibration_convergence.png}
+\end{center}
+{\small 图像来自已完成运行 \path{author_20260927_225947}。显示处理含作者的常数相位偏移和中值滤波，定量一致性指标按原保存数据计算。后续复跑已核对关键指标一致。}
+\clearpage
+\section{测试数据生成和噪声模型}
+\subsection*{已知真值的圆形 MCF 数据}
+两组均为163芯，物理端面半径26\,$\mu$m，算法支持域半径29\,$\mu$m；周期组标称芯间距3.2\,$\mu$m，非周期组采用扰动芯位置，最小间距约2.41\,$\mu$m。两组使用同一混合振幅--相位样品。
+\begin{center}\includegraphics[width=.82\linewidth,height=65mm,keepaspectratio]{figures/geometry.png}\end{center}
+输入样品耦合到各芯标量基模，叠加固定芯增益与相位得到输出端面复场；细网格传播后对探测像素做强度平均。重建网格为$256\times256$，间距0.5\,$\mu$m；波长532\,nm、传播距离120\,$\mu$m。生成使用2倍细网格；与4倍细网格的参考振幅差约0.42\%／0.44\%。这些几何与物理简化为本阶段仿真设定。
+\subsection*{探测器计数噪声}
+借鉴低光子相位恢复与计算成像的探测域噪声研究\cite{lsa2020,prl2018,oe2015}，本轮采用纯Poisson散粒噪声：
+\[
+\alpha=\frac{p}{\langle I_{\rm ref}\rangle},\qquad K_i\sim\operatorname{Poisson}(\alpha I_i),\qquad A_i=\sqrt{K_i/\alpha},\quad p\in\{1,10\}.
+\]
+$p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素/帧}，$I_i$为无噪声样品强度。固定曝光保留样品吸收，样品期望均值为周期$0.4206p$、非周期$0.4126p$。无噪声输入为$\sqrt{I_i}$；本轮不叠加未标定读噪。
+
+文献支持探测域Poisson建模和低光子测试水平；本实验的空白参考归一化、几何与理想检测效率是明确的研究设定，不等同于逐项复现文献仪器参数。已知理想参考校准保持不变。
+\subsection*{共同比较规则}
+四方法共享输入、初值、支持域与固定参数：HIO $\beta=0.2$，RAAR $\beta=0.9$，L-BFGS记忆长度10及Armijo回溯\cite{fienup,luke,lbfgs}。计算量计入全部正／反传播，包括L-BFGS被拒绝试探。复场NRMSE在全场计算，仅按固定ROI对齐一个全局相位；相位RMSE在该ROI计算。真值用于评价，不参与求解。
+\clearpage
+\section{无噪声情况对比}
+无噪声沿用原保存的共同80次传播检查点，展示两类布局的振幅和校正相位。后续200次检查点仅作补充；现有无噪声数据只有稀疏检查点，不能据此确定全轨迹最低误差。
+\begin{center}\small\begin{tabular}{llrrr}\toprule
+布局 & 方法 & 复场NRMSE(80) & 相位RMSE/rad(80) & 复场NRMSE(200)\\\midrule
+CLEAN_TABLE
+\bottomrule\end{tabular}\end{center}
+在这两个已保存的共同检查点中，RAAR的复场误差均为四方法最低。以下图像取80次传播的原始保存复场，不作滤波；相位扣除共同参考并对齐全局相位。
+\begin{center}\includegraphics[width=\linewidth,height=100mm,keepaspectratio]{figures/periodic_clean80.pdf}\end{center}
+{\small 周期布局；上排振幅，下排参考校正相位。Truth为仿真真值，其余列为四方法输出。}
+\clearpage
+\subsection*{无噪声对比（续）：非周期布局}
+\begin{center}\includegraphics[width=\linewidth,height=120mm,keepaspectratio]{figures/aperiodic_clean80.pdf}\end{center}
+{\small 非周期布局，80次传播；上排振幅，下排参考校正相位。各列同一色标、同一视场。}
+
+已知合成参考场为两种布局的共同初始化依据。这里的比较检验固定合成样品上的恢复效果，不涵盖参考校准误差、纤芯耦合或偏振漂移。
+
+端面生成真值、原始输入、两处保存复场与指标均保留；查看与重画入口见第6节。无噪声与后续含噪声结果沿用相同评分定义。
+\clearpage\begin{landscape}\thispagestyle{empty}
+\section{有噪声情况对比}
+\textbf{先看早期恢复过程。} 两类布局、两个计数水平、三个随机种子、四种方法，共48次求解。图中放大前20次传播，显示误差下降与开始回升的区域。
+\begin{center}\includegraphics[width=242mm,height=135mm,keepaspectratio]{figures/noise_early.pdf}\end{center}
+{\small 实线：三种子均值；阴影：最小--最大范围；圆点：每2次传播保存的真实评价点。星号为\textbf{整条已保存均值曲线的回顾性最低点}，均落在2--6次传播内。首个有效更新处多条曲线／星号重合。完整0--200次曲线另存\path{figures/noise_full_history.pdf}，逐步数据包含实际接受迭代数。}
+\end{landscape}
+\clearpage
+\subsection*{有噪声对比（续）：早期达到的恢复效果}
+对每个“布局--计数--方法”，在已保存的0:2:200次传播点中找到\textbf{三个种子平均复场NRMSE最低的共同检查点}，再报告该点的均值与样本标准差。各方法对应计算量分别列出，不把不同预算的结果描述为等预算排名；上页曲线支持同预算阅读。
+\begin{center}\small\begin{tabular}{ll l rr rr}\toprule
+布局 & $p$ & 方法 & 传播 & 迭代 & 复场NRMSE & 同点相位RMSE/rad\\\midrule
+NOISE_TABLE
+\bottomrule\end{tabular}\end{center}
+\textbf{主结果：}
+\begin{itemize}
+\item $p=1$时，四方法首次有效更新达到的复场误差几乎相同：周期约0.3283、非周期约0.3326，均明显低于共同初值的0.6555／0.6739。不能据早期最低误差给四方法排出明显优劣。
+\item $p=10$时，ER与L-BFGS的早期最低均值接近；ER约0.2198／0.2194，L-BFGS约0.2203／0.2207。3次重复不足以支持微小差异的显著性结论。
+\item HIO、ER、RAAR首次支持域内投影相同，当前L-BFGS设置的首次有效更新也给出极接近的结果，因此低计数下早期效果重合。后续算法差异更多体现在误差随继续迭代的变化。
+\end{itemize}
+\textbf{停止规则边界：} 这些检查点由评价真值回顾性确定，展示本次运行曾达到的恢复效果；它们不是已经建立的自动早停规则。相位误差在复场最低点读取，并非另取相位最小值。3次标准差描述观测波动，不计入选点偏差。
+\clearpage
+\section{小结}
+\begin{enumerate}
+\item 已形成“作者公开示例跑通--已知真值数据生成--四方法共同条件比较--文献支持的噪声对照”的阶段研究链条。
+\item 无噪声已有检查点中RAAR表现较好；含噪时，各方法在早期已达到较低误差，低计数下首步效果接近，较高计数下ER与L-BFGS的早期效果接近。
+\item 值得注意的现象是：继续迭代可能使真值误差回升，本轮所有求解在200次传播时均高于80次。该现象提示需要研究噪声匹配与不依赖真值的停止依据，而非将最终迭代误差作为唯一评价。
+\end{enumerate}
+下一阶段可围绕稳定保留早期恢复质量推进。请老师指导下一步重点。
+\subsection*{源码、数据与可编辑报告}\begingroup\small\raggedright
+\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark}{项目公开仓库}首页提供最新下载。以下路径均相对仓库根目录；Windows工作目录为\path{C:/projects/FAST_Phase_Retrieval_Benchmark/}。
+\begin{itemize}
+\item \textbf{本报告与LaTeX：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/tree/main/reports/research_summary_20261004}{本报告目录}，含\path{main.tex}、\path{figures/}、\path{data/}及工程ZIP。
+\item \textbf{重建源码：}\path{src/simulation/}、\path{src/solvers/}、\path{src/metrics/}；方法说明\path{docs/methods/METHOD_CARDS_zh.md}。本轮运行入口\path{START_POISSON_STAGE.cmd}；数据处理与报告入口\path{tools/build_research_summary.py}，仅读取保存结果，不重跑重建。
+\item \textbf{原文复现：}\path{runs/pilot/author_20260927_225947/}含图、指标及执行记录；冻结作者代码\path{legacy_fast/}，公开输入来源\href{https://github.com/Jiawei-sn/FAST}{Jiawei-sn/FAST}。项目历史大文件草稿Release尚未公开，不能把它当作公开下载入口。
+\item \textbf{无噪声与生成数据：}\path{runs/pilot/four_20261003_224047_034/}及\path{mcf_20261003_224006_279_01/02}两生成运行（均位于\path{runs/pilot/}）；真值对应\path{evaluation_only/}。完整历史MAT恢复按\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/blob/main/CIRCULAR_RESTORE_zh.md}{圆形结果恢复说明}和公开圆形结果Release操作。
+\item \textbf{含噪原始结果：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/tree/main/runs/pilot/poisson_stage_20261004}{Poisson原始结果目录}，含输入、最终复场、曲线、参数与完成回执。早期保存的是评价曲线，未保存每一步复场；报告不展示不存在的早期重建图像。
+\item \textbf{绘图与选点数据：}本报告\path{data/curves.csv}、\path{early_minima.csv}、\path{selection_rule.json}、\path{clean_comparison.csv}；可直接追溯图表数值。
+\end{itemize}
+\endgroup
+\clearpage
+\begingroup\small\raggedright
+\begin{thebibliography}{9}
+\bibitem{fast} Sun et al. FAST原文，Light: Science \& Applications (2022).\\\href{https://doi.org/10.1038/s41377-022-00898-2}{doi:10.1038/s41377-022-00898-2}；作者公开代码Jiawei-sn/FAST，冻结提交\path{27961c38b6e7f9d148b38a470e3b6b90accc4468}。
+\bibitem{fienup} J. R. Fienup. Phase retrieval algorithms: a comparison. Applied Optics 21, 2758--2769 (1982).\\\href{https://doi.org/10.1364/AO.21.002758}{doi:10.1364/AO.21.002758}。
+\bibitem{luke} D. R. Luke. Relaxed averaged alternating reflections for diffraction imaging. Inverse Problems 21, 37--50 (2005).\\\href{https://arxiv.org/abs/math/0405208}{公开预印本：arXiv:math/0405208}。
+\bibitem{lbfgs} D. C. Liu and J. Nocedal. On the limited memory BFGS method for large scale optimization. Mathematical Programming 45, 503--528 (1989).\\\href{https://doi.org/10.1007/BF01589116}{doi:10.1007/BF01589116}。
+\bibitem{lsa2020} Learning to synthesize: robust phase retrieval at low photon counts. Light: Science \& Applications (2020).\\\href{https://doi.org/10.1038/s41377-020-0267-2}{doi:10.1038/s41377-020-0267-2}。式(5)支持Poisson+Gaussian探测模型；本轮采用其Poisson分量及约1/10计数的低光子测试思路。
+\bibitem{prl2018} Low Photon Count Phase Retrieval Using Deep Learning. Physical Review Letters 121, 243902 (2018).\\\href{https://doi.org/10.1103/PhysRevLett.121.243902}{doi:10.1103/PhysRevLett.121.243902}。参考照明计数定义依据。
+\bibitem{oe2015} Experimental robustness of Fourier Ptychography phase retrieval algorithms. Optics Express 23, 33214 (2015).\\\href{https://doi.org/10.1364/OE.23.033214}{doi:10.1364/OE.23.033214}。强度Poisson噪声与鲁棒性比较依据。
+\end{thebibliography}\endgroup
+\end{document}

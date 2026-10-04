@@ -1,0 +1,80 @@
+{
+  "completed_solves": 48,
+  "curve_rows": 4848,
+  "independent_final_metric_checks": 96,
+  "inputs": [
+    {
+      "case": "periodic_p1_seed41001",
+      "input_sha256": "a3f0bd5c61553e8ecfd6e4dfac2d330ee862ba39f65dff6846e40976ea1820ee",
+      "sample_expected_mean": 0.4205705762730776,
+      "sample_actual_mean": 0.41796875
+    },
+    {
+      "case": "periodic_p1_seed41002",
+      "input_sha256": "c570d87716f5df8aebbe0fd857c591fe5bbb6ca50c7320e8d7a27fb01b752b9d",
+      "sample_expected_mean": 0.4205705762730776,
+      "sample_actual_mean": 0.4203948974609375
+    },
+    {
+      "case": "periodic_p1_seed41003",
+      "input_sha256": "f32b88492505a5070439f1c976ba9fbacc2e53f02b1d863c6bd5a30f39d8517d",
+      "sample_expected_mean": 0.4205705762730776,
+      "sample_actual_mean": 0.4206085205078125
+    },
+    {
+      "case": "periodic_p10_seed41001",
+      "input_sha256": "21525371a822ae7c22d3f2c9e0cc0654462ca0b5117d6a4158d8b4c0775250c0",
+      "sample_expected_mean": 4.205705762730759,
+      "sample_actual_mean": 4.2064056396484375
+    },
+    {
+      "case": "periodic_p10_seed41002",
+      "input_sha256": "6918cd241422b513b6a8d919ececf90e6770bfbdf01e8a8074b8ebaf2429ed74",
+      "sample_expected_mean": 4.205705762730759,
+      "sample_actual_mean": 4.1971588134765625
+    },
+    {
+      "case": "periodic_p10_seed41003",
+      "input_sha256": "9ce69d10a99da5db52e973b80349d654eaeb07817543c7fb729ebfe3317e3d4e",
+      "sample_expected_mean": 4.205705762730759,
+      "sample_actual_mean": 4.1961517333984375
+    },
+    {
+      "case": "aperiodic_p1_seed41001",
+      "input_sha256": "cfd6d42e7b369f9378ca70f4b507a4c331330ce1bcfb9ba158681f0115ce3fea",
+      "sample_expected_mean": 0.41261334357363766,
+      "sample_actual_mean": 0.41058349609375
+    },
+    {
+      "case": "aperiodic_p1_seed41002",
+      "input_sha256": "02f6190814cec56d60dad2376001d7f4abcada84171ce7a2382a8f0112c08006",
+      "sample_expected_mean": 0.41261334357363766,
+      "sample_actual_mean": 0.41217041015625
+    },
+    {
+      "case": "aperiodic_p1_seed41003",
+      "input_sha256": "8dd866b97fbff794c25cb12c208923388f055ef3cc49bfd07d6ea6f49b739353",
+      "sample_expected_mean": 0.41261334357363766,
+      "sample_actual_mean": 0.413818359375
+    },
+    {
+      "case": "aperiodic_p10_seed41001",
+      "input_sha256": "91127783acc494d4d732b44841706a959c93738154da356fe2e22f3dfaad6f31",
+      "sample_expected_mean": 4.126133435736371,
+      "sample_actual_mean": 4.1281280517578125
+    },
+    {
+      "case": "aperiodic_p10_seed41002",
+      "input_sha256": "82bde5db347591c44bcf50ad8fcfb597f7898984651ebd91be841ed0bc1940e5",
+      "sample_expected_mean": 4.126133435736371,
+      "sample_actual_mean": 4.1212005615234375
+    },
+    {
+      "case": "aperiodic_p10_seed41003",
+      "input_sha256": "bdfa3d6c59eb3603bc3b901cd28d3597fce43c63b451524ed550f32dad7b60ba",
+      "sample_expected_mean": 4.126133435736371,
+      "sample_actual_mean": 4.1176910400390625
+    }
+  ],
+  "backend": "MATLAB CPU double"
+}

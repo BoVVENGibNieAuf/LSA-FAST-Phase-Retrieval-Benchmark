@@ -1,0 +1,5 @@
+{
+  "clean80_independent_metric_checks": 16,
+  "noise_source": "previously verified 4848 MATLAB scalar records; no solver rerun",
+  "selection_definition": "selection_rule.json"
+}
