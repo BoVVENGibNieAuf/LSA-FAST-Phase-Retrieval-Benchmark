@@ -1,0 +1,1 @@
+{"case":"periodic_p10_seed41002","method":"HIO","input_sha256":"6918cd241422b513b6a8d919ececf90e6770bfbdf01e8a8074b8ebaf2429ed74","result_sha256":"df8325785cba5936cea3cfb3c215c38fd699371b9ebe4ea7d0f3aad1158fe03f","curve_sha256":"3ddedd3e98922b63860c519ce801b7836621c853b3ab43a349fbaa22e46909a6","stop_reason":"propagation_budget","seconds":0.3015531,"propagations":200}

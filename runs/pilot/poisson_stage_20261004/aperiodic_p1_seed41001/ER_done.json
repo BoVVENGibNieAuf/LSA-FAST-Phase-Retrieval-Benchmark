@@ -1,0 +1,1 @@
+{"case":"aperiodic_p1_seed41001","method":"ER","input_sha256":"cfd6d42e7b369f9378ca70f4b507a4c331330ce1bcfb9ba158681f0115ce3fea","result_sha256":"848f3a8afdfe8ac96e0d19456b5b82936f01eda3fd1247a2c8adfa0c1e39e398","curve_sha256":"b81ab9439c7ce9db80815c70dc4c709cbf5e04fc0323aa1041e952df5570ee56","stop_reason":"propagation_budget","seconds":0.27727870000000004,"propagations":200}

@@ -1,0 +1,1 @@
+{"case":"aperiodic_p10_seed41002","method":"LBFGS","input_sha256":"82bde5db347591c44bcf50ad8fcfb597f7898984651ebd91be841ed0bc1940e5","result_sha256":"9cca9efc1d8902b7046c10544dbf89cb472ea8c64a3238a241c053c2ecdfde76","curve_sha256":"0d1c6068471f5af5d60fd7a7b033beb0bd5ce1d1ab04e5b00af8df46fc9618e5","stop_reason":"propagation_budget","seconds":0.64313999999999982,"propagations":200}

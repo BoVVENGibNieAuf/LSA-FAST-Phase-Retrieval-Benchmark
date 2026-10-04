@@ -1,0 +1,1 @@
+{"case":"periodic_p10_seed41003","method":"RAAR","input_sha256":"9ce69d10a99da5db52e973b80349d654eaeb07817543c7fb729ebfe3317e3d4e","result_sha256":"06c1298db263e1888958d61a1c84e51200c45716a9abae45cb64218fcc9c5479","curve_sha256":"ab16c990eb24e9b7cf14a1348af563c12130625e6e7e6962d631692bb680b40c","stop_reason":"propagation_budget","seconds":0.34747050000000018,"propagations":200}

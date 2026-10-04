@@ -1,0 +1,1 @@
+{"case":"aperiodic_p1_seed41001","method":"RAAR","input_sha256":"cfd6d42e7b369f9378ca70f4b507a4c331330ce1bcfb9ba158681f0115ce3fea","result_sha256":"81c3e3b037a182d61be93328fff0714931881764c667fd71566e556947902ed1","curve_sha256":"9dfacf128fecb3abb11659772047cb738e6ea5a5219395aed98341d3b946a7e9","stop_reason":"propagation_budget","seconds":0.34700050000000016,"propagations":200}

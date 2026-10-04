@@ -1,3 +1,15 @@
+## Latest: Poisson stage (2026-10-04)
+
+48/48 MATLAB solves completed (34.99 s), 4,848 curve rows and 96 independently verified final metrics. ER has the lowest final field error in all four noisy conditions. All 48 runs have higher field error at 200 than at 80 propagation calls. Three seeds per condition; fixed parameters and ideal known calibration.
+
+- [New stage PDF](reports/poisson_stage_20261004/MCF_Poisson_stage_report.pdf)
+- [Editable LaTeX](reports/poisson_stage_20261004/MCF_Poisson_LaTeX.zip)
+- [Two figures and full table](reports/poisson_stage_20261004/REPORT.md)
+- [Protocol and literature](reports/POISSON_STAGE_PROTOCOL_20261004.md)
+- [Completed MATLAB results](runs/pilot/poisson_stage_20261004/status.json)
+
+This is a pure Poisson detector-count experiment, p=1/10 mean detected counts per blank-reference pixel/frame. Historical shot+read results remain engineering tests. The older 16-page report is retained as historical; this report is the current noise-stage update.
+
 # FAST 相位恢复基准研究
 
 **源码状态：公开（Public）。2026-10-04 已核验仓库及已发布 Release 可公开访问，无需仓库邀请或额外访问授权。** 仓库可见性不改变现有许可证、实验验证状态或复跑结论。

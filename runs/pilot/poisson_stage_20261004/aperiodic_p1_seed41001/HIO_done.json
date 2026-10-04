@@ -1,0 +1,1 @@
+{"case":"aperiodic_p1_seed41001","method":"HIO","input_sha256":"cfd6d42e7b369f9378ca70f4b507a4c331330ce1bcfb9ba158681f0115ce3fea","result_sha256":"c6e951f9fd5619eff9dbfc0e9a93716c39b0c5fec24c4d8c275139718c23d5d4","curve_sha256":"c72692dfa61dc5443367f60be9647d40f07cb10e3220b05f1566521bcd9806e4","stop_reason":"propagation_budget","seconds":0.28957719999999987,"propagations":200}
