@@ -59,7 +59,7 @@ $p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素
 \clearpage
 \begin{landscape}\thispagestyle{empty}
 \section{无噪声情况对比}
-\textbf{完整iteration曲线。} 两类布局、四方法，复场与相位误差分别展示；星号标出各方法本次已保存轨迹中的最低复场误差。与原80／200次传播的16项复场检查全部一致。
+\textbf{完整iteration曲线。} 两类布局、四方法，复场与相位误差分别展示；星号标出各方法本次已保存轨迹中的最低复场误差。
 \begin{center}\includegraphics[width=242mm,height=120mm,keepaspectratio]{figures/clean_iterations.pdf}\end{center}
 {\small 曲线由MATLAB补录，每2次传播评分一次；横轴使用实际接受iteration。最低点为回顾性真值评价。逐步数据与最佳iteration见\path{data/clean_curves.csv}、\path{data/clean_best.csv}。}
 \end{landscape}\clearpage
@@ -88,9 +88,6 @@ $p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素
 
 端面生成真值、原始输入、两处保存复场与指标均保留；查看与重画入口见第6节。无噪声与后续含噪声结果沿用相同评分定义。
 
-\textbf{对“第一步就最好”的回答：} 无噪声的8次运行均在第一步之后继续改善，最佳iteration为28--100；含噪低计数下却在首步达到最低复场误差。这说明首步最低不是算法更新或评分必然造成的结果，更支持它与当前含噪测量及目标函数有关。尚不能单凭这一对照排除模型差异、初始化或问题非唯一性的贡献。
-
-对12次含噪L-BFGS记录，接受更新的测量目标持续不增，而最终真值误差高于首步；最低计数下首步相位误差也未改善。因此，测量拟合、复场恢复和相位恢复应分别评价，不能把首步复场最低称为“已经收敛到正确解”。
 \clearpage\begin{landscape}\thispagestyle{empty}
 \section{有噪声情况对比}
 \textbf{恢复过程与最佳点。} 两类布局、两个计数水平、三个随机种子、四种方法，共48次求解。图中展示各次运行的完整误差轨迹，横轴为实际接受的迭代次数。
@@ -128,6 +125,9 @@ $p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素
 \item HIO、ER、RAAR首次支持域内投影相同，当前L-BFGS设置的首次有效更新也给出极接近的结果，因此低计数下早期效果重合。后续算法差异更多体现在误差随继续迭代的变化。
 \end{itemize}
 \textbf{“最佳”的含义：} 这里是使用已知真值，从本次已保存运行中回顾性找到的最佳值与iteration，不是预先确定的自动停止规则，也不代表所有可能参数下的全局最佳。逐次原始值、对应传播开销及相位误差见\path{data/per_run_best.csv}。
+\subsection*{结果分析}
+无噪声时，各方法通过多次迭代进一步降低误差；加入噪声后，最佳恢复点提前至前几次更新。含噪L-BFGS的测量拟合目标持续下降，而复场真值误差回升，表明当前幅值拟合目标与恢复精度并不一致。后续重点是保留早期恢复质量，并建立不依赖真值的停止准则。
+
 \clearpage
 \section{小结}
 \begin{enumerate}

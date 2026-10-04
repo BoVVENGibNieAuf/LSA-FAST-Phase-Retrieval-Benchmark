@@ -9,7 +9,7 @@
   },
   {
     "path": "main.pdf",
-    "sha256": "9986ea4b8307d2a002d9d6777d60fc55a4c90534e79d188d5084db0cd9d0cbfa"
+    "sha256": "5a51f1c00b99aaefba12a66c6a2ddf2e03cbe4b60e836a8d66e307cf913f7119"
   },
   {
     "path": "build.sh",
@@ -17,7 +17,7 @@
   },
   {
     "path": "main.tex",
-    "sha256": "e5b01f3f301db18fb47224989e03c7e946ee0d99de8abf67e00aeb7a7a4641db"
+    "sha256": "afc75da3b194709a63819e682257c53233f515379c24ca2e869ea7cc72fc9ba3"
   },
   {
     "path": "figures/noise_iterations.png",
