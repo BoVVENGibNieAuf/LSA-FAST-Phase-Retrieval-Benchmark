@@ -58,8 +58,8 @@ for l in Ls:
 with (A/'clean_comparison.csv').open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=clean[0]);w.writeheader();w.writerows(clean)
 print('Retrospective minima:',[(q['layout'],q['p_blank'],q['method'],q['budget'],round(q['field_mean'],4)) for q in selected])
 clean_tex=[]
-for q in clean:
- clean_tex.append(f"{'周期' if q['layout']=='periodic' else '非周期'} & {q['method']} & {float(q['field80']):.4f} & {float(q['phase80']):.4f} & {float(q['field200']):.4f}\\\\")
+for q in csv.DictReader((A/'clean_best.csv').open()):
+ clean_tex.append(f"{'周期' if q['layout']=='periodic' else '非周期'} & {q['method']} & {q['best_iteration']} & {float(q['min_field_nrmse']):.4f}\\\\")
 import runpy
 noise_tex=runpy.run_path(str(R/'tools/build_best_iteration.py'))['table_rows']
 tex=(R/'tools/research_summary_template.tex').read_text().replace('CLEAN_TABLE','\n'.join(clean_tex)).replace('NOISE_TABLE','\n'.join(noise_tex));(D/'main.tex').write_text(tex)

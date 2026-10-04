@@ -1,0 +1,1 @@
+[{"case":"periodic_clean","method":"LBFGS","budget":80,"relative_field_delta":0},{"case":"periodic_clean","method":"LBFGS","budget":200,"relative_field_delta":0}]

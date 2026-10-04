@@ -1,0 +1,62 @@
+{
+  "rows": 808,
+  "old_checkpoint_matches": 16,
+  "best": [
+    {
+      "layout": "periodic",
+      "method": "HIO",
+      "best_iteration": 32,
+      "min_field_nrmse": 0.144466102565857,
+      "propagations": 64
+    },
+    {
+      "layout": "periodic",
+      "method": "ER",
+      "best_iteration": 100,
+      "min_field_nrmse": 0.14749061117048,
+      "propagations": 200
+    },
+    {
+      "layout": "periodic",
+      "method": "RAAR",
+      "best_iteration": 99,
+      "min_field_nrmse": 0.11813847101404,
+      "propagations": 198
+    },
+    {
+      "layout": "periodic",
+      "method": "LBFGS",
+      "best_iteration": 28,
+      "min_field_nrmse": 0.142465667264797,
+      "propagations": 58
+    },
+    {
+      "layout": "aperiodic",
+      "method": "HIO",
+      "best_iteration": 92,
+      "min_field_nrmse": 0.12639220979466,
+      "propagations": 184
+    },
+    {
+      "layout": "aperiodic",
+      "method": "ER",
+      "best_iteration": 100,
+      "min_field_nrmse": 0.129244695287711,
+      "propagations": 200
+    },
+    {
+      "layout": "aperiodic",
+      "method": "RAAR",
+      "best_iteration": 99,
+      "min_field_nrmse": 0.102706784490609,
+      "propagations": 198
+    },
+    {
+      "layout": "aperiodic",
+      "method": "LBFGS",
+      "best_iteration": 39,
+      "min_field_nrmse": 0.120561549316985,
+      "propagations": 80
+    }
+  ]
+}

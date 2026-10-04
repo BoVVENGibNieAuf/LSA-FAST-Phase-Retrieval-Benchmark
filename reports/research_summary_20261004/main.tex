@@ -16,7 +16,7 @@
 \item \textbf{补充噪声依据与迭代分析。} 根据成像文献设置探测域 Poisson 噪声，完成多种子重复，观察恢复质量在迭代过程中的变化。
 \end{enumerate}
 \subsection*{当前主要认识}
-无噪声的已保存检查点中，RAAR 的复场误差最低。含噪条件下，各方法在很早期已经获得较好的恢复；在低计数条件下，首次有效更新的效果几乎相同，在较高计数条件下，ER 与 L-BFGS 的早期最佳效果接近。方法之间还存在对迭代继续推进的稳定性差异。
+无噪声完整轨迹中，四方法均在多次迭代后进一步改善，RAAR达到的最低复场误差最小。含噪条件下，各方法在很早期已经获得较好的恢复；在低计数条件下，首次有效更新的效果几乎相同，在较高计数条件下，ER 与 L-BFGS 的早期最佳效果接近。方法之间还存在对迭代继续推进的稳定性差异。
 
 本报告将\textbf{早期恢复效果}作为含噪部分的主比较，结合曲线观察后续变化。回顾性最低误差用于理解各方法已达到的效果，下一步仍需建立不依赖真值的停止依据。
 \subsection*{阅读与材料入口}
@@ -57,20 +57,26 @@ $p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素
 \subsection*{共同比较规则}
 四方法共享输入、初值、支持域与固定参数：HIO $\beta=0.2$，RAAR $\beta=0.9$，L-BFGS记忆长度10及Armijo回溯\cite{fienup,luke,lbfgs}。计算量计入全部正／反传播，包括L-BFGS被拒绝试探。复场NRMSE在全场计算，仅按固定ROI对齐一个全局相位；相位RMSE在该ROI计算。真值用于评价，不参与求解。
 \clearpage
+\begin{landscape}\thispagestyle{empty}
 \section{无噪声情况对比}
-无噪声沿用原保存的共同80次传播检查点，展示两类布局的振幅和校正相位。后续200次检查点仅作补充；现有无噪声数据只有稀疏检查点，不能据此确定全轨迹最低误差。
-\begin{center}\small\begin{tabular}{llrrr}\toprule
-布局 & 方法 & 复场NRMSE(80) & 相位RMSE/rad(80) & 复场NRMSE(200)\\\midrule
-周期 & HIO & 0.1467 & 0.1146 & 0.1489\\
-周期 & ER & 0.1550 & 0.1327 & 0.1475\\
-周期 & RAAR & 0.1252 & 0.1040 & 0.1182\\
-周期 & LBFGS & 0.1460 & 0.1149 & 0.2123\\
-非周期 & HIO & 0.1302 & 0.1009 & 0.1267\\
-非周期 & ER & 0.1400 & 0.1176 & 0.1292\\
-非周期 & RAAR & 0.1107 & 0.0898 & 0.1027\\
-非周期 & LBFGS & 0.1206 & 0.0980 & 0.1523\\
+\textbf{完整iteration曲线。} 两类布局、四方法，复场与相位误差分别展示；星号标出各方法本次已保存轨迹中的最低复场误差。与原80／200次传播的16项复场检查全部一致。
+\begin{center}\includegraphics[width=242mm,height=120mm,keepaspectratio]{figures/clean_iterations.pdf}\end{center}
+{\small 曲线由MATLAB补录，每2次传播评分一次；横轴使用实际接受iteration。最低点为回顾性真值评价。逐步数据与最佳iteration见\path{data/clean_curves.csv}、\path{data/clean_best.csv}。}
+\end{landscape}\clearpage
+\subsection*{无噪声对比（续）：共同检查点与重建图像}
+下表列出完整已保存轨迹中各方法自己的最佳iteration与最低复场NRMSE。随后图像复用原80次传播保存的复场，仅用于展示共同检查点的重建外观。
+\begin{center}\small\begin{tabular}{llrr}\toprule
+布局 & 方法 & 最佳iteration & 最低复场NRMSE\\\midrule
+周期 & HIO & 32 & 0.1445\\
+周期 & ER & 100 & 0.1475\\
+周期 & RAAR & 99 & 0.1181\\
+周期 & LBFGS & 28 & 0.1425\\
+非周期 & HIO & 92 & 0.1264\\
+非周期 & ER & 100 & 0.1292\\
+非周期 & RAAR & 99 & 0.1027\\
+非周期 & LBFGS & 39 & 0.1206\\
 \bottomrule\end{tabular}\end{center}
-在这两个已保存的共同检查点中，RAAR的复场误差均为四方法最低。以下图像取80次传播的原始保存复场，不作滤波；相位扣除共同参考并对齐全局相位。
+两类布局的回顾性最低复场误差均以RAAR最小。ER的最低点落在本次运行末端，不能据此认定继续迭代一定无收益。以下图像取80次传播保存的复场，并非逐方法最佳点图像；相位扣除共同参考并对齐全局相位。
 \begin{center}\includegraphics[width=\linewidth,height=100mm,keepaspectratio]{figures/periodic_clean80.pdf}\end{center}
 {\small 周期布局；上排振幅，下排参考校正相位。Truth为仿真真值，其余列为四方法输出。}
 \clearpage
@@ -81,6 +87,10 @@ $p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素
 已知合成参考场为两种布局的共同初始化依据。这里的比较检验固定合成样品上的恢复效果，不涵盖参考校准误差、纤芯耦合或偏振漂移。
 
 端面生成真值、原始输入、两处保存复场与指标均保留；查看与重画入口见第6节。无噪声与后续含噪声结果沿用相同评分定义。
+
+\textbf{对“第一步就最好”的回答：} 无噪声的8次运行均在第一步之后继续改善，最佳iteration为28--100；含噪低计数下却在首步达到最低复场误差。这说明首步最低不是算法更新或评分必然造成的结果，更支持它与当前含噪测量及目标函数有关。尚不能单凭这一对照排除模型差异、初始化或问题非唯一性的贡献。
+
+对12次含噪L-BFGS记录，接受更新的测量目标持续不增，而最终真值误差高于首步；最低计数下首步相位误差也未改善。因此，测量拟合、复场恢复和相位恢复应分别评价，不能把首步复场最低称为“已经收敛到正确解”。
 \clearpage\begin{landscape}\thispagestyle{empty}
 \section{有噪声情况对比}
 \textbf{恢复过程与最佳点。} 两类布局、两个计数水平、三个随机种子、四种方法，共48次求解。图中展示各次运行的完整误差轨迹，横轴为实际接受的迭代次数。
@@ -122,7 +132,7 @@ $p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素
 \section{小结}
 \begin{enumerate}
 \item 已形成“作者公开示例跑通--已知真值数据生成--四方法共同条件比较--文献支持的噪声对照”的阶段研究链条。
-\item 无噪声已有检查点中RAAR表现较好；含噪时，各方法在早期已达到较低误差，低计数下首步效果接近，较高计数下ER与L-BFGS的早期效果接近。
+\item 无噪声完整记录中RAAR达到的最低复场误差最小；含噪时，各方法在早期已达到较低误差，低计数下首步效果接近，较高计数下ER与L-BFGS的早期效果接近。
 \item 值得注意的现象是：继续迭代可能使真值误差回升，本轮所有求解在200次传播时均高于80次。该现象提示需要研究噪声匹配与不依赖真值的停止依据，而非将最终迭代误差作为唯一评价。
 \end{enumerate}
 下一阶段可围绕稳定保留早期恢复质量推进。请老师指导下一步重点。
@@ -134,6 +144,7 @@ $p$为\textbf{空白参考帧全$256\times256$像素的平均检测计数/像素
 \item \textbf{原文复现：}\path{runs/pilot/author_20260927_225947/}含图、指标及执行记录；冻结作者代码\path{legacy_fast/}，公开输入来源\href{https://github.com/Jiawei-sn/FAST}{Jiawei-sn/FAST}。项目历史大文件草稿Release尚未公开，不能把它当作公开下载入口。
 \item \textbf{无噪声与生成数据：}\path{runs/pilot/four_20261003_224047_034/}及\path{mcf_20261003_224006_279_01/02}两生成运行（均位于\path{runs/pilot/}）；真值对应\path{evaluation_only/}。完整历史MAT恢复按\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/blob/main/CIRCULAR_RESTORE_zh.md}{圆形结果恢复说明}和公开圆形结果Release操作。
 \item \textbf{含噪原始结果：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/tree/main/runs/pilot/poisson_stage_20261004}{Poisson原始结果目录}，含输入、最终复场、曲线、参数与完成回执。早期保存的是评价曲线，未保存每一步复场；报告不展示不存在的早期重建图像。
+\item \textbf{无噪声逐迭代补录：}\path{runs/pilot/clean_convergence_20261004/}；入口\path{START_CLEAN_CONVERGENCE.cmd}。报告数据\path{data/clean_curves.csv}已统一列名；原始MATLAB文件与检查回执保留。
 \item \textbf{绘图与选点数据：}本报告\path{data/curves.csv}、\path{per_run_best.csv}、\path{selection_rule.json}、\path{clean_comparison.csv}；可直接追溯图表数值。
 \end{itemize}
 \endgroup

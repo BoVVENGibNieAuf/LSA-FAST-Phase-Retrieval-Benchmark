@@ -1,5 +1,7 @@
 ## 当前完整阶段报告（六节版，2026-10-04）
 
+已补齐无噪声完整iteration曲线与各方法最佳iteration/最低值：8次补录、808条记录、16处原检查点吻合。无噪声最佳iteration为28–100，均不在首步。最新版PDF共10页。
+
 [阅读PDF](reports/research_summary_20261004/MCF_Research_Progress.pdf) · [可编辑LaTeX工程](reports/research_summary_20261004/MCF_Research_LaTeX.zip) · [报告源文件和绘图数据](reports/research_summary_20261004/)
 
 按“简报 → 原文章复现 → 数据生成与噪声 → 无噪声比较 → 有噪声比较 → 小结”组织。含噪主结果为早期恢复效果与真实曲线；回顾性最低误差明确使用评价真值选点，不能当作已验证早停规则。此前以最终预算为主的报告保留为历史版本。
