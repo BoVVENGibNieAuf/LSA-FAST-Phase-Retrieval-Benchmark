@@ -12,11 +12,33 @@ tex=r'''\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
 \usepackage[margin=18mm]{geometry}
 \usepackage{amsmath,amssymb,graphicx,booktabs,hyperref,pdflscape,fancyhdr}
 \hypersetup{colorlinks=true,urlcolor=blue}
-\pagestyle{fancy}\fancyhf{}\fancyhead[L]{MCF：Poisson 噪声阶段对照}\fancyhead[R]{2026-10-04}\fancyfoot[C]{\thepage}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{MCF相位恢复：阶段研究进展}\fancyhead[R]{2026-10-04}\fancyfoot[C]{\thepage}
 \setlength{\headheight}{15pt}\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
 \begin{document}
-\begin{center}{\LARGE\bfseries 圆形 MCF：散粒噪声与迭代稳定性}\par\vspace{5pt}阶段汇报\quad |\quad 呈佳伟老师\end{center}
-佳伟老师：本阶段完成 48 次固定预算求解，采用有成像文献依据的探测域 Poisson 噪声；补齐 4,848 条逐步评价记录。MATLAB CPU 双精度批次用时 34.99 秒，96 项最终误差独立复核通过。
+\begin{center}{\LARGE\bfseries 多芯光纤相位恢复：阶段研究进展}\par\vspace{5pt}阶段汇报\quad |\quad 呈佳伟老师\end{center}
+佳伟老师：这段时间围绕“多芯光纤相位恢复中，不同重建方法的精度与噪声稳定性”开展工作，已从作者公开示例复现推进到统一条件下的仿真对照。
+\section*{这段时间完成的工作}
+\begin{enumerate}
+\item \textbf{跑通作者公开示例。} 完成 FAST 参考校准与样品重建，建立后续比较的基础流程。
+\item \textbf{建立已知真值的 MCF 仿真。} 构建圆形端面，比较周期与非周期纤芯布局，使恢复误差能够直接量化。
+\item \textbf{完成四种方法的统一比较。} 实现 HIO、ER、RAAR 与 L-BFGS，在共同输入、初值和计算预算下进行无噪声及含噪声对照。
+\item \textbf{补充文献依据与迭代稳定性分析。} 根据成像文献设置 Poisson 探测噪声，完成多种子重复，记录误差随迭代开销的变化。
+\end{enumerate}
+\section*{目前得到的认识}
+在本轮固定条件下，无噪声时 RAAR 的最终复场误差最低；含噪时 ER 最低。增加迭代开销并不保证恢复更准确：本轮所有含噪求解在200次传播时的误差均高于80次传播。因此，后续需要关注噪声条件与停止准则对恢复效果的共同影响。
+
+本阶段已完成\textbf{公开示例跑通与已知真值仿真对照}，结论范围仍是固定合成样品和已知理想校准。以下给出最近完成的噪声对照结果及图表。请老师指导下一步工作重点。
+\section*{报告、源文件与结果在哪里}
+\textbf{公开仓库：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark}{LSA-FAST-Phase-Retrieval-Benchmark}（点击可打开），首页 README 提供最新报告和下载入口。
+\begin{itemize}
+\item \textbf{当前报告与可编辑 LaTeX：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/tree/main/reports/poisson_stage_20261004}{reports/poisson\_stage\_20261004/}。PDF 为阅读版，\path{MCF_Poisson_LaTeX.zip} 含正文、矢量图和绘图数据；解压后主文件为 \path{main.tex}。
+\item \textbf{重建源码与运行入口：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/tree/main/src}{src/} 为仿真、求解和评分代码，\path{tools/} 为运行脚本；本轮 Windows 入口为 \path{START_POISSON_STAGE.cmd}。
+\item \textbf{本轮原始结果：}\href{https://github.com/BoVVENGibNieAuf/LSA-FAST-Phase-Retrieval-Benchmark/tree/main/runs/pilot/poisson_stage_20261004}{runs/pilot/poisson\_stage\_20261004/}，含输入、最终复场、逐步误差CSV和参数记录。
+\item \textbf{此前圆形 MCF 图像与方法说明：} 仓库 \path{reports/latex_delivery_20261004/} 与 \path{docs/methods/}；历史大文件恢复入口见首页说明。
+\end{itemize}
+\clearpage
+\section*{本次补充：Poisson 噪声对照}
+本轮完成48次固定预算求解，记录逐步误差；全部任务完成，最终误差由保存复场独立复核。
 \section*{主要发现}
 \begin{itemize}
 \item 在两类布局、两个计数水平下，ER 的最终复场 NRMSE 均为四方法最低。$p=1$ 时周期／非周期分别为 0.6898／0.6940；$p=10$ 时为 0.2971／0.2958（三次均值）。

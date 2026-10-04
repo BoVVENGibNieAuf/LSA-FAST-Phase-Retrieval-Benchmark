@@ -89,7 +89,7 @@ def main():
  lines=['# Poisson 噪声阶段结果','',f'48/48 MATLAB 求解完成；{checks} 项最终误差独立复核通过。','', '|布局|空白计数 p|方法|复场 NRMSE（均值 ± SD）|相位 RMSE/rad（均值 ± SD）|','|---|---:|---|---:|---:|']
  for r in summary:lines.append(f"|{r['layout']}|{r['p_blank']}|{r['method']}|{r['field_nrmse_mean']:.4f} ± {r['field_nrmse_sd']:.4f}|{r['phase_rmse_rad_mean']:.4f} ± {r['phase_rmse_rad_sd']:.4f}|")
  lines+=['','![逐步误差](figures/convergence.png)','','均值曲线与三个种子的最小–最大范围；横轴为预算，早停时延续最后状态，实际调用数见CSV。','','![最终误差](figures/noise_levels.png)','','散点为三次重复，横线为均值；无噪声菱形是原始保存结果。不同预算下真值仅用于评价，未用于早停或选参。','','空白参考 p=1/10 平均检测计数/像素/帧，全256×256帧平均。保持已知理想校准；不代表低光子条件下端到端校准性能。三次重复不作显著性结论。']
- (OUT/'REPORT.md').write_text('\n'.join(lines))
+ (OUT/'REPORT.md').write_text(((OUT/'OVERVIEW.md').read_text() if (OUT/'OVERVIEW.md').exists() else '')+'\n'.join(lines))
  shutil.copy2(ROOT/'reports/POISSON_STAGE_PROTOCOL_20261004.md',OUT/'PROTOCOL.md')
  print(json.dumps(audit,indent=2))
 if __name__=='__main__':main()
