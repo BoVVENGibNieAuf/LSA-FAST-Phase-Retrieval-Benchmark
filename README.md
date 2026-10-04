@@ -1,3 +1,7 @@
+# Research branch: support / Gaussian modes / detection optics
+
+本分支入口：[模型依据、实验设计与运行说明](docs/branch/SUPPORT_OPTICS_zh.md)。独立运行 `START_SUPPORT_OPTICS.cmd`。新增数值结果待 MATLAB 执行；主线报告以下保留作历史基线。
+
 ## 当前完整阶段报告（六节版，2026-10-04）
 
 已补齐无噪声完整iteration曲线与各方法最佳iteration/最低值：8次补录、808条记录、16处原检查点吻合。无噪声最佳iteration为28–100，均不在首步。最新版PDF共10页。
